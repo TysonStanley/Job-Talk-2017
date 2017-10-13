@@ -1,5 +1,6 @@
 ---
-title: "."
+title: "Health Data Science"
+subtitle: "Investigating in and providing tools for public health research"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -681,9 +682,18 @@ Outcomes will be:
 ---
 # Simulation Results
 
+.large[.large[
+1. $a x b + c' \approx c$ (within rounding error, even at low sample sizes)
+
+2. Consistent parameters (even at low samples sizes)
+]]
 
 
 
+
+.footnote[
+Results are preliminary. Still investigating statistical power.
+]
 
 ---
 # Interpretation of Estimates
@@ -901,11 +911,10 @@ fit
 
 --
 .large[.large[
-My approach takes me to .dcoral[applied data analysis], .bluer[method synthesis and creation], and .nicegreen[software development]
+My approach is based on .dcoral[applied data analysis], .bluer[method synthesis and creation], and .nicegreen[software development]
 ]]
 
 ---
-count: false
 class: inverse, center, middle
 
 # Thank you.
