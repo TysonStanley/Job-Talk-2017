@@ -683,34 +683,40 @@ Outcomes will be:
 # Simulation Results
 
 .large[.large[
-1. $a x b + c' \approx c$ (within rounding error, even at low sample sizes)
-
+1. $a \times b + c' \approx c$ (within rounding error, even at low sample sizes)
 2. Consistent parameters (even at low samples sizes)
 ]]
 
-
-
-
 .footnote[
-Results are preliminary. Still investigating statistical power.
+Results are preliminary.
 ]
+
+--
+
+#### Count and Binary Mediators (preliminary)
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+tibble::tibble(
+  `Indirect Path` = c("Small-Small", "Small-Medium", "Small-Large", "Medium-Medium", "Medium-Large", "Large-Large"),
+  `Count Mediator: Sample Size`   = c("500", 400, 400, 200, 100, "<50"),
+  `Binary Mediator: Sample Size`   = c("500", 400, 400, 200, 100, 50)
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE)
+```
 
 ---
 # Interpretation of Estimates
 
-Since this method can handle all sorts of combinations of variable types, here are some interpretation guidelines.
+.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
 
-.pull-left[
+.pull-left[.large[
 **Principle 1: The individual paths are interpreted based on the corresponding endogenous variable's original metric.**
-
-</br>
 
 **Principle 2: The indirect effect, as a combination of the a and b paths, are interpreted based on the outcome's original metric.**
 
-</br>
-
 **Principle 3: Both the direct and total effects are interpreted based on the outcome's original metric.**
-]
+]]
 
 --
 
@@ -836,7 +842,7 @@ table1(nhanes,
 ]
 
 .pull-right[
-![](table1_fig.png)
+![Table 1](table1_fig.png)
 ]
 
 ---
@@ -894,7 +900,7 @@ fit = mma(nhanes_2010,
 
 ---
 
-```{r, echo=FALSE, comment = "           "}
+```{r, echo=FALSE, comment = "              "}
 fit
 ```
 
