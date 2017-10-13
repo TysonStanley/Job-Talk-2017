@@ -157,7 +157,7 @@ The large, nationally-representative health survey now has .dcoral[4 time points
 .large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
 
 ---
-background-image: url(Figure1_Final.pdf)
+background-image: url(Figure1_Final.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -216,7 +216,7 @@ Daily cost data is hard to come by: usually the "cost" data is some proportion o
 ]
 
 ---
-background-image: url(los_costs_fig.pdf)
+background-image: url(los_costs_fig.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -286,7 +286,7 @@ ggsave("los_costs_fig.pdf", los_costs, width = unit(10, 'in'), height = unit(7, 
 
 
 ---
-background-image: url(Figure1_DailyCosts.pdf)
+background-image: url(Figure1_DailyCosts.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -438,7 +438,7 @@ When the mediator or outcome is **categorical/non-normal**, mediation analysis l
 
 .large[**Why?**]
 
-![](fig_binarymediator.pdf)
+![](fig_binarymediator.jpg)
 
 ???
   - Mediation struggles with categorical/non-normal mediators/outcomes

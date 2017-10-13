@@ -164,7 +164,7 @@ The large, nationally-representative health survey now has .dcoral[4 time points
 .large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
 
 ---
-background-image: url(Figure1_Final.pdf)
+background-image: url(Figure1_Final.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -223,7 +223,7 @@ Daily cost data is hard to come by: usually the "cost" data is some proportion o
 ]
 
 ---
-background-image: url(los_costs_fig.pdf)
+background-image: url(los_costs_fig.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -232,7 +232,7 @@ background-size: 900px
 
 
 ---
-background-image: url(Figure1_DailyCosts.pdf)
+background-image: url(Figure1_DailyCosts.jpg)
 background-position: 50% 70%
 background-size: 900px
 
@@ -322,8 +322,8 @@ Used extensively in Prevention Science research (used somewhat in Epidemiology a
 
 --
 
-<div id="htmlwidget-405d30817fe9db3a8e3c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-405d30817fe9db3a8e3c">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b511f308eef6308e1a33" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b511f308eef6308e1a33">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ???
   - Series of regressions
@@ -345,7 +345,7 @@ When the mediator or outcome is **categorical/non-normal**, mediation analysis l
 
 .large[**Why?**]
 
-![](fig_binarymediator.pdf)
+![](fig_binarymediator.jpg)
 
 ???
   - Mediation struggles with categorical/non-normal mediators/outcomes
@@ -409,15 +409,15 @@ Ultimately, mediation doesn't work well with categorical mediators/outcomes. But
 ---
 # Current Approaches
 
-<div id="htmlwidget-e71c6766acd2cf527ed6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e71c6766acd2cf527ed6">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-15536f4017c18937703a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-15536f4017c18937703a">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-2e31909126ba3a78a149" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2e31909126ba3a78a149">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-d6ffa4b111eb9c11f69c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d6ffa4b111eb9c11f69c">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ???
   - There are five common approaches, but we don't have time to talk about each
@@ -719,17 +719,17 @@ fit = mma(nhanes_2010,
             
             -- Indirect Effect(s) --
                                        Apath    Bpath Indirect    Lower   Upper
-            genderFemale-home_meals -1.35202 -0.00972  0.01314  0.00486 0.02498
-            age-home_meals          -0.05711 -0.00972  0.00056  0.00001 0.00143
-            asthmaNo-home_meals     -0.00410 -0.00972  0.00004 -0.00686 0.00588
-            genderFemale-age        -0.21555  0.00066 -0.00014 -0.00277 0.00173
-            asthmaNo-age             0.35028  0.00066  0.00023 -0.00273 0.00409
+            genderFemale-home_meals -1.35202 -0.00972  0.01314  0.00432 0.02545
+            age-home_meals          -0.05711 -0.00972  0.00056 -0.00005 0.00134
+            asthmaNo-home_meals     -0.00410 -0.00972  0.00004 -0.00633 0.00594
+            genderFemale-age        -0.21555  0.00066 -0.00014 -0.00259 0.00219
+            asthmaNo-age             0.35028  0.00066  0.00023 -0.00307 0.00351
             
             -- Direct Effect(s) --
                            Direct    Lower   Upper
-            genderFemale  0.10329  0.05077 0.15843
-            age           0.00066 -0.00683 0.00791
-            asthmaNo     -0.00172 -0.07462 0.06450
+            genderFemale  0.10329  0.04973 0.15883
+            age           0.00066 -0.00624 0.00745
+            asthmaNo     -0.00172 -0.07039 0.07784
             -----
 ```
 
