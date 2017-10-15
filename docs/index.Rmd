@@ -698,12 +698,27 @@ Results are preliminary.
 library(tidyverse)
 tibble::tibble(
   `Indirect Path` = c("Small-Small", "Small-Medium", "Small-Large", "Medium-Medium", "Medium-Large", "Large-Large"),
-  `Count Mediator: Sample Size`   = c("500", 400, 400, 200, 100, "<50"),
-  `Binary Mediator: Sample Size`   = c("500", 400, 400, 200, 100, 50)
+  `Count Mediator: Sample Size`   = c("200", 100, 50, "<50", "<50", "<50"),
+  `Binary Mediator: Sample Size`   = c("500", 200, 200, 100, 100, 50)
 ) %>%
   DT::datatable(options = list(dom = "t"),
                 rownames = FALSE)
 ```
+
+
+???
+Definitions:
+
+Logistic (OR)
+1. Small = 1.58
+2. Medium = 3.44
+3. Large = 6.73
+
+Count
+1. Small = 1.34
+2. Medium = 1.82
+3. Large = 3.01
+
 
 ---
 # Interpretation of Estimates
