@@ -625,21 +625,32 @@ where $F(\beta x_i | x_i = 1)$ is the predicted value of the $ith$ observation w
 ---
 # Monte Carlo Simulation
 
-#### The "a" Path Population Model 
-- where the $Prob(M = 1)$ is a latent continuous variable with a linear or logistic relationship with the predictors
-- the $e_i$ is normally distributed with $M = 0$ and $SD = 1$.
+#### The "a" Path Population Model (.bluer[Binary] Mediator)
+- where the $Prob(M = 1)$ is a latent continuous variable with a logistic relationship with the predictors
+- the $e_i$ is normally distributed with $\mu = 0$ and $SD = 1$.
 $$
 Prob(M = 1)_i = a_0 + a_1 x_c + a_2 x_d + e_i
 $$
 The observed variable, $M_i$, is defined as follows: $M_i = 0$ if $Prob(M = 1) < .5$ and $M_i = 1$ otherwise.
 
+---
+count: false
+# Monte Carlo Simulation
+
+#### The "a" Path Population Model (.bluer[Count] Mediator)
+- where the mediator $M$ is a Poisson-distributed variable
+- the $e_i$ is normally distributed with $\mu = 0$ and $SD = 1$.
+$$
+M_i = a_0 + a_1 x_c + a_2 x_d + e_i
+$$
+
 --
 
-#### The "b" and "c'" Path Population Model
+#### The "b" and "c'" Path Population Model (for both the binary and count mediators)
 $$
 Y_i = b_0 + b_1 M_i + c'_1 x_c + c'_2 x_d + e_i
 $$
-where this $e_i$ also is normally distributed with $M = 0$ and $SD = 1$.
+where this $e_i$ also is normally distributed with $\mu = 0$ and $SD = 1$.
 
 - $x_c$ is a continuous predictor
 - $x_d$ is a dummy coded predictor
