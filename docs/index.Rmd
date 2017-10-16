@@ -31,7 +31,7 @@ count: false
 --------
 
 .Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health and psychology
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
 ]
 ]
 
@@ -135,10 +135,11 @@ I want to talk about one of the projects that addressed the prevalence and trend
 Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
 ]]
 
---
 .large[.large[
 Serious **implications** for Healthcare:
 ]]
+
+--
 .large[.large[
 1. Need to **investigate the cause** (iPods to blame?)
 2. Need to **adjust care** (ask more about hearing in regular visits?)
@@ -292,6 +293,13 @@ background-position: 50% 70%
 background-size: 900px
 
 ???
+We looked at the average costs across the first twenty days of the stays. We assessed this by breaking down the total cost into sub-costs.
+
+1. Variable vs. Fixed
+2. Therapy, Diagnostic, Overhead
+3. Location of Cost
+4. Insurance type
+
 Graphically we can pick out some immediate trends:
 
 1. The first day in hospital is most expensive (much of it driven by therapy costs with some diagnostic costs)
@@ -311,7 +319,6 @@ Now we are going to switch gears a bit and discuss how I'm helping researchers h
 
 ---
 class: inverse, center, middle
-count: false
 # Helping Researchers
 
 ---
@@ -326,6 +333,7 @@ count: false
 .large[Methods to make research more reproducible and interpretable]
 ]]]
 
+--
 .nicegreen[
 .pull-right[.center[
 ### Creating Software in `R` and `Shiny`
@@ -341,8 +349,10 @@ Provides the ability to use new methods
 ---
 # Developing New Methods/Approaches
 
+--
 .Huge[The development of .dcoral[**Marginal Mediation Analysis**]]
 
+--
 .large[.large[
 This is a synthesis of two powerful approaches:
 
@@ -614,6 +624,7 @@ where $F(\beta x_i | x_i = 1)$ is the predicted value of the $ith$ observation w
 
 .huge[*The synthesis of Mediation and Average Marginal Effects*]
 
+--
 .large[.large[
 - .bluer[Essentially applies Average Marginal Effects for each regression that make up the complete mediation model]
 - Uses .dcoral[bootstrapping] to understand uncertainty
@@ -634,7 +645,6 @@ $$
 The observed variable, $M_i$, is defined as follows: $M_i = 0$ if $Prob(M = 1) < .5$ and $M_i = 1$ otherwise.
 
 ---
-count: false
 # Monte Carlo Simulation
 
 #### The "a" Path Population Model (.bluer[Count] Mediator)
@@ -841,6 +851,7 @@ Makes working with data easier, reproducible, and more interpretable
 Provides the ability to use new methods
 ]]
 
+--
 .center[
 ### .dcoral[Two of my software packages:]
 .large[
@@ -895,9 +906,7 @@ background-size: 950px
 
 # `furniture`
 
-.large[R Journal paper introducing the software]
-
-.large[Discusses the benefits to using a .dcoral[reproducible approach to making tables]]
+.large[R Journal paper introducing the software and discusses the benefits to using a .dcoral[reproducible approach to making tables]]
 
 ---
 # `MarginalMediation`
