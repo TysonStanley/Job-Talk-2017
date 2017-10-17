@@ -196,6 +196,13 @@ Makes working with data easier, reproducible, and more interpretable
 Provides the ability to use new methods
 ]]]]]
 
+???
+Much of this work is inspired by my statistical consulting work.
+
+I have consulted on projects across many disciplines and many types of projects.
+
+As I've seen needs I begin investigating ways to address it.
+
 ---
 # Developing New Methods/Approaches
 
@@ -237,8 +244,8 @@ Used extensively in Prevention Science research (used somewhat in Epidemiology a
 
 --
 
-<div id="htmlwidget-e74e747087294e348939" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e74e747087294e348939">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9f2bbf2168be57c43c70" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9f2bbf2168be57c43c70">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ???
   - Series of regressions
@@ -324,15 +331,15 @@ Ultimately, mediation doesn't work well with categorical mediators/outcomes. But
 ---
 # Current Approaches
 
-<div id="htmlwidget-bb1196dc6b657db19d09" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb1196dc6b657db19d09">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-08e8e5cca8c632898f21" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-08e8e5cca8c632898f21">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-386879907f1c89054756" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-386879907f1c89054756">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-e13658b1b7765cd0b06c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e13658b1b7765cd0b06c">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ???
   - There are five common approaches, but we don't have time to talk about each
@@ -470,8 +477,8 @@ Results are preliminary.
 --
 
 #### Count and Binary Mediators (preliminary)
-<div id="htmlwidget-35fca5fda715e4ee4f96" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-35fca5fda715e4ee4f96">{"x":{"filter":"none","data":[["Small-Small","Small-Medium","Small-Large","Medium-Medium","Medium-Large","Large-Large"],["200","100","50","&lt;50","&lt;50","&lt;50"],["500","200","200","100","100","50"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Indirect Path<\/th>\n      <th>Count Mediator: Sample Size<\/th>\n      <th>Binary Mediator: Sample Size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cba4920305ef6532b183" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cba4920305ef6532b183">{"x":{"filter":"none","data":[["Small-Small","Small-Medium","Small-Large","Medium-Medium","Medium-Large","Large-Large"],["200","100","50","&lt;50","&lt;50","&lt;50"],["500","200","200","100","100","50"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Indirect Path<\/th>\n      <th>Count Mediator: Sample Size<\/th>\n      <th>Binary Mediator: Sample Size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 
 ???
@@ -666,17 +673,17 @@ fit = mma(nhanes_2010,
                
                -- Indirect Effect(s) --
                                           Apath    Bpath Indirect    Lower   Upper
-               genderFemale-home_meals -1.35202 -0.00972  0.01314  0.00364 0.02436
-               age-home_meals          -0.05711 -0.00972  0.00056 -0.00003 0.00130
-               asthmaNo-home_meals     -0.00410 -0.00972  0.00004 -0.00709 0.00591
-               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00253 0.00176
-               asthmaNo-age             0.35028  0.00066  0.00023 -0.00303 0.00319
+               genderFemale-home_meals -1.35202 -0.00972  0.01314  0.00471 0.02460
+               age-home_meals          -0.05711 -0.00972  0.00056 -0.00002 0.00136
+               asthmaNo-home_meals     -0.00410 -0.00972  0.00004 -0.00580 0.00716
+               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00282 0.00194
+               asthmaNo-age             0.35028  0.00066  0.00023 -0.00282 0.00337
                
                -- Direct Effect(s) --
                               Direct    Lower   Upper
-               genderFemale  0.10329  0.04389 0.15522
-               age           0.00066 -0.00636 0.00740
-               asthmaNo     -0.00172 -0.06500 0.07872
+               genderFemale  0.10329  0.04417 0.15879
+               age           0.00066 -0.00567 0.00704
+               asthmaNo     -0.00172 -0.07155 0.06813
                -----
 ```
 

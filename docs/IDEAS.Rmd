@@ -190,6 +190,13 @@ Makes working with data easier, reproducible, and more interpretable
 Provides the ability to use new methods
 ]]]]]
 
+???
+Much of this work is inspired by my statistical consulting work.
+
+I have consulted on projects across many disciplines and many types of projects.
+
+As I've seen needs I begin investigating ways to address it.
+
 ---
 # Developing New Methods/Approaches
 
