@@ -1,0 +1,810 @@
+---
+title: "Health Data Science"
+subtitle: "Investigating in and providing tools for public health research"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: pres2.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+.right[
+# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+]
+
+-------
+
+---
+count: false
+
+.right[
+# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+
+--------
+
+.Huge[
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
+]
+]
+
+???
+I want to explain why I came to love Health Data Science, what I've done so far, and things I'm planning on doing
+
+---
+background-image: url(MethodTraining_fig.jpg)
+background-position: 99% 75%
+background-size: 700px
+
+# My Background is Wide
+
+
+.huge[.bluer[
+1. Quantitative Psychology
+
+2. Social Epidemiology
+
+3. Economics
+
+4. Machine Learning
+
+5. Statistics
+]]
+
+---
+# What can you do with that?
+
+.huge[
+This background provided the tools to:
+]
+
+.large[.large[
+1. .nicegreen[Help vulnerable populations] have better health
+
+2. .nicegreen[Help researchers] helping vulnerable populations be more effective
+]]
+
+<br>
+
+.center[.large[.large[I do this by .bluer[applying] and .dcoral[developing] quantitative methods and data analytics]]]
+
+???
+I see them both as part of the same overall goal -- help individuals (including researchers)
+
+---
+class: inverse, center, middle
+count: false
+# Helping Vulnerable Populations
+
+---
+# Helping Vulnerable Populations
+
+.huge[.dcoral[
+Let's discuss one of my projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+]
+
+---
+# Childhood and Adolescent Hearing Loss
+
+.pull-left[
+.dcoral[.Huge[Ground Level Research]
+.huge[
+1. Prevalence
+2. Temporal Trends
+3. Measurement
+]]]
+
+--
+
+.pull-right[
+.bluer[.Huge[Higher Level Research]
+.huge[
+4. Policy
+5. Practice
+]]]
+
+???
+I want to talk about one of the projects that addressed the prevalence and trends of adolescent hearing loss
+
+---
+# Childhood Hearing Loss: Prevalence and Trends
+
+.large[.large[
+Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
+]]
+
+.large[.large[
+Serious **implications** for Healthcare:
+]]
+
+--
+.large[.large[
+1. Need to **investigate the cause** (iPods to blame?)
+2. Need to **adjust care** (ask more about hearing in regular visits?)
+3. Need to make **new policies** to curb trend (reduce volume levels on iPods?)
+]]
+
+--
+.large[.large[.dcoral[But...] Conclusions only based on two time points]]
+
+
+---
+# NHANES
+
+.huge[
+The large, nationally-representative health survey now has .dcoral[4 time points available].]
+
+.large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
+
+---
+background-image: url(Figure1_Final.jpg)
+background-position: 50% 70%
+background-size: 900px
+
+???
+This figure shows the prevalence per 1000 adolescents across hearing loss level and laterality of the loss. 
+There does look to be an increase with a precipitous drop in 2010. 
+Ultimately, we can't conclude it is increasing.
+Models suggested differences between 1994 and 2008 were common across combinations of degree and laterality.
+But no differences between 1994 and 2010.
+Is it due to sampling??
+We need more data but NHANES stopped collecting this data in 2010
+Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
+
+
+---
+class: inverse, center, middle
+# Helping Researchers
+
+---
+# Providing Methods and Tools
+
+.huge[Two major aspects:]
+
+.dcoral[
+.pull-left[.center[
+### Developing New Methods/Approaches
+
+.large[Methods to make research more reproducible and interpretable]
+]]]
+
+--
+.nicegreen[
+.pull-right[.center[
+### Creating Software in `R` and `Shiny`
+
+.pull-left[.large[
+Makes working with data easier, reproducible, and more interpretable
+]]
+
+.pull-right[.large[
+Provides the ability to use new methods
+]]]]]
+
+---
+# Developing New Methods/Approaches
+
+--
+.Huge[The development of .dcoral[**Marginal Mediation Analysis**]]
+
+--
+.large[.large[
+This is a synthesis of two powerful approaches:
+
+1. .bluer[Mediation Analysis]
+
+2. .nicegreen[Average Marginal Effects]
+]]
+
+---
+# What is Mediation Analysis
+
+.pull-left[
+A series of regressions:
+
+$$
+Y = c_0 + b_1 M + c'_1 X + e_1
+$$
+
+$$
+M = a_0 + a_1 X + e_2
+$$
+
+Used extensively in Prevention Science research (used somewhat in Epidemiology and Public Health)
+
+- Provides info on the process of an effect
+- Heavily based on theory and prior literature
+]
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.height=4, fig.width=6}
+library("lavaan")
+
+# Example 5.8 from mplus user guide:
+Data <- data.frame(
+  Y = rnorm(100),
+  X = rnorm(100),
+  M = rnorm(100)
+)
+
+# Model:
+model.Lavaan <- '
+  M ~ X
+  Y ~ M + X
+'
+fit <- cfa(model.Lavaan, data=Data, std.lv=TRUE)
+
+# Plot path diagram:
+library(semPlot)
+semPaths(fit,
+         title=FALSE, curvePivot = TRUE,
+         edgeLabels = c("a", "b", "c'"),
+         edge.label.cex = 2,
+         layout = "spring",
+         sizeMan = 12,
+         shapeMan = "rectangle",
+         border.color = "dodgerblue4",
+         border.width = 3,
+         node.width = 1.5,
+         node.height = 1,
+         mar = c(4,6,5,6))
+```
+]
+
+--
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+data.frame(
+  Effects = c("Indirect Effect", "Direct Effect", "Total Effect"),
+  Definitions = c("a * b", "c'", "a * b + c'")
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE,
+                colnames = c("Effects of Interest", "Definitions"))
+```
+
+???
+  - Series of regressions
+  - Provides valuable information (when done properly)
+  - Note the effects often sought after (indirect, direct, total)
+
+But...
+
+---
+# But...
+
+.large[
+When the mediator or outcome is **categorical/non-normal**, mediation analysis lacks:
+
+- intuitive interpretation (e.g., total effect doesn't equal total effect?)
+- defined effect sizes (indirect or total) or meaningful confidence intervals
+]
+--
+
+.large[**Why?**]
+
+![](fig_binarymediator.jpg)
+
+???
+  - Mediation struggles with categorical/non-normal mediators/outcomes
+  - For example, 
+    - if X is continuous, M is binary, and Y is continuous the diagram shows how we would often model each path
+    - So, how do you create a meaningful effect size when trying to combine logistic and linear regression?
+  - Ultimately, to have any meaningful interpretation, **need additive**
+
+So its not good. But to reiterate, consider the next slide.
+
+---
+# Why the big fuss?
+
+.pull-left[
+#### Linear Model
+
+$$
+Y = \beta_0 + \sum_j^p \beta_j X_j + e_i
+$$
+
+The marginal effect of, say, $X_1$ is:
+$$
+\frac{\delta Y}{\delta X_1} = \beta_1
+$$
+]
+
+--
+
+.pull-right[
+
+#### Logistic Regression
+
+$$
+logit(Y) = \beta_0 + \sum_j^p \beta_j X_j + e_i
+$$
+$$
+\frac{Prob(Y = 1)}{1 - Prob(Y = 1)} = e^{\beta_0 + \sum_j^p \beta_j X_j + e_i}
+$$
+
+$$
+Prob(Y = 1) = \frac{e^{\beta_0 + \sum_j^p \beta_j X_j + e_i}}{1 + e^{\beta_0 + \sum_j^p \beta_j X_j + e_i}}
+$$
+
+The marginal effect of, say, $X_1$ is:
+$$
+\frac{\delta Y}{\delta X_1} = \frac{e^{\beta_0 + \sum_j^p \beta_j X_j + e_i}}{(1 + e^{\beta_0 + \sum_j^p \beta_j X_j + e_i})^2}
+$$
+]
+
+???
+  - Consider the *marginal effect* -- the thing you want in regression -- in two situations (**feel free to ignore the math**)
+    - Linear
+    - Logistic
+      - In logistic the marginal effect depends on the values of all the predictors 
+      - and it is just plain ugly compared to linear regression
+
+The takeaway --> Marginal Effect depends on all covariates
+
+Ultimately, mediation doesn't work well with categorical mediators/outcomes. But people are using those, right? So what are the common approaches?
+
+---
+# Current Approaches
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+data.frame(
+  Number = 1:5,
+  Approach = c("Series of logistic regressions",
+               "Use SEM's approach (polychoric correlation)",
+               "Standardize the coefficients",
+               "Interpret each path separately",
+               "Pretend all variables are continuous"),
+  Pros = c("Simple to apply in most software", 
+           "Powerful, well-designed,\nEasy to implement with proper software", 
+           "Provides significance test\nof indirect effect",
+           "Simplest approach with proper models",
+           "Simplest approach"),
+  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
+           "Only works with ordinal variables,\n only standardized effect sizes",
+           "Assumptions (distributions), difficult to interpret beyond p-value",
+           "Ignores some information,\n cannot obtain indirect effect size",
+           "Purposeful mis-specification, poor model fit")
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE) %>%
+  DT::formatStyle(c("Number"),
+                  target = "row",
+                  color = DT::styleEqual(c("1", 
+                                           "2", 
+                                           "3", 
+                                           "4",
+                                           "5"), 
+                                         c("black", "black", "white", "white", "white")))
+```
+---
+count: false
+
+# Current Approaches
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+data.frame(
+  Number = 1:5,
+  Approach = c("Series of logistic regressions",
+               "Use SEM's approach (polychoric correlation)",
+               "Standardize the coefficients",
+               "Interpret each path separately",
+               "Pretend all variables are continuous"),
+  Pros = c("Simple to apply in most software", 
+           "Powerful, well-designed,\nEasy to implement with proper software", 
+           "Provides significance test\nof indirect effect",
+           "Simplest approach with proper models",
+           "Simplest approach"),
+  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
+           "Only works with ordinal variables,\n only standardized effect sizes",
+           "Assumptions (distributions), difficult to interpret beyond p-value",
+           "Ignores some information,\n cannot obtain indirect effect size",
+           "Purposeful mis-specification, poor model fit")
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE) %>%
+  DT::formatStyle(c("Number"),
+                  target = "row",
+                  color = DT::styleEqual(c("1", 
+                                           "2", 
+                                           "3", 
+                                           "4",
+                                           "5"), 
+                                         c("black", "black", "black", "black", "black")))
+```
+
+???
+  - There are five common approaches, but we don't have time to talk about each
+  - Ultimately, nothing great.
+
+Luckily, in economics especially, there is a simple technique known as Average Marginal Effects.
+
+---
+# Average Marginal Effects
+
+.large[
+The *average* of the marginal effects for any type of GLM:
+]
+
+--
+
+.pull-left[
+#### Definition: Continuous Variable
+$$
+AME_k = \beta_k \frac{1}{n} \sum_i^n f(\beta x_i)
+$$
+where $f$ is the derivative of the estimate with respect to $x_i$, the $\beta x_i$ is the linear combination of the predictors, and $AME_k$ is the average marginal effect for the $kth$ variable. 
+]
+
+--
+
+.pull-right[
+#### Definition: Dummy Coded Variable
+$$
+AME_{k} = \frac{1}{n} \sum_i^n [ F(\beta x_i | x_i = 1) - F(\beta x_i | x_i = 0) ]
+$$
+where $F(\beta x_i | x_i = 1)$ is the predicted value of the $ith$ observation when the dummy variable equals one and $F(\beta x_i | x_i = 0)$ is the predicted value when the dummy value equals zero. 
+]
+
+???
+  - Simply, they are the average of the marginal effects
+    - with the observed values in place (no crazy or impossible values)
+    - without diving into the math here, both are taking the average effect of a one unit increase in the $kth$ variable
+  - In other words, take the predicted value at some level of the predictor, then add one to the predictor and take the prediction again. The difference is the marginal effect.
+  - In a paper I'm working on right now, it shows the AME is a consistent estimator of the underlying latent effect (probability, count, etc.)
+
+---
+# Marginal Mediation Analysis
+
+.huge[*The synthesis of Mediation and Average Marginal Effects*]
+
+--
+.large[.large[
+- .bluer[Essentially applies Average Marginal Effects for each regression that make up the complete mediation model]
+- Uses .dcoral[bootstrapping] to understand uncertainty
+- Created the .nicegreen[software] to perform Marginal Mediation Analysis (discussed later)]]
+
+--
+.large[.large[To test its .dcoral[accuracy] and .dcoral[power], I performed a Monte Carlo Simulation]]
+
+---
+# Monte Carlo Simulation
+
+#### The "a" Path Population Model (.bluer[Binary] Mediator)
+- where the $Prob(M = 1)$ is a latent continuous variable with a logistic relationship with the predictors
+- the $e_i$ is normally distributed with $\mu = 0$ and $SD = 1$.
+$$
+Prob(M = 1)_i = a_0 + a_1 x_c + a_2 x_d + e_i
+$$
+The observed variable, $M_i$, is defined as follows: $M_i = 0$ if $Prob(M = 1) < .5$ and $M_i = 1$ otherwise.
+
+---
+# Monte Carlo Simulation
+
+#### The "a" Path Population Model (.bluer[Count] Mediator)
+- where the mediator $M$ is a Poisson-distributed variable
+- the $e_i$ is normally distributed with $\mu = 0$ and $SD = 1$.
+$$
+M_i = a_0 + a_1 x_c + a_2 x_d + e_i
+$$
+
+--
+
+#### The "b" and "c'" Path Population Model (for both the binary and count mediators)
+$$
+Y_i = b_0 + b_1 M_i + c'_1 x_c + c'_2 x_d + e_i
+$$
+where this $e_i$ also is normally distributed with $\mu = 0$ and $SD = 1$.
+
+- $x_c$ is a continuous predictor
+- $x_d$ is a dummy coded predictor
+
+???
+  - The known population model consist of a binary M and continuous (approx normal) outcome
+  - A path has a latent probability variable that maps onto a discrete mediator
+  - B and C path is essentially a multiple linear regression
+
+---
+# Monte Carlo Simulation
+
+.huge[.dcoral[Conditions] Varied for the simulation:]
+
+.large[.large[
+- Varying sample size (100 - 1000)
+- Varying effect size of each path (small, medium, large)
+- Varying Mediator's distribution (binomial, poisson)
+]]
+
+--
+
+.large[.large[Each condition will have 500 replications]]
+
+???
+  - The conditions tested will be broad for basic understanding of the method's behavior
+  - Sample size: basic for what is needed for logistic
+  - Effect sizes range from small to big
+  - Next few (proportion and distribution) are because logistic is involved
+  - Bootstrap size (hopefully 500 is sufficient)
+  
+Outcomes will be:
+
+1. bias (i.e., is the mean of the estimates at the population mean?), 
+2. power (i.e., how often does the null properly get rejected?), 
+3. confidence interval coverage (i.e., does the confidence interval cover the proper interval?), and 
+4. how closely $a \times b + c'$ is to $c$ (i.e., does the indirect plus the direct effect equal the total effect?)
+
+
+---
+# Simulation Results
+
+.large[.large[
+1. $a \times b + c' \approx c$ (within rounding error, even at low sample sizes)
+2. Consistent parameters (even at low samples sizes)
+]]
+
+.footnote[
+Results are preliminary.
+]
+
+--
+
+#### Count and Binary Mediators (preliminary)
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+tibble::tibble(
+  `Indirect Path` = c("Small-Small", "Small-Medium", "Small-Large", "Medium-Medium", "Medium-Large", "Large-Large"),
+  `Count Mediator: Sample Size`   = c("200", 100, 50, "<50", "<50", "<50"),
+  `Binary Mediator: Sample Size`   = c("500", 200, 200, 100, 100, 50)
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE)
+```
+
+
+???
+Definitions:
+
+Logistic (OR)
+1. Small = 1.58
+2. Medium = 3.44
+3. Large = 6.73
+
+Count
+1. Small = 1.34
+2. Medium = 1.82
+3. Large = 3.01
+
+
+---
+# Interpretation of Estimates
+
+.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
+
+.pull-left[.large[
+**Principle 1: The individual paths are interpreted based on the corresponding endogenous variable's original metric.**
+
+**Principle 2: The indirect effect, as a combination of the a and b paths, are interpreted based on the outcome's original metric.**
+
+**Principle 3: Both the direct and total effects are interpreted based on the outcome's original metric.**
+]]
+
+--
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.height=4, fig.width=6}
+library("lavaan")
+
+# Example 5.8 from mplus user guide:
+Data <- data.frame(
+  Y_count = rnorm(100),
+  X_continuous = rnorm(100),
+  M_binary = rnorm(100)
+)
+
+# Model:
+model.Lavaan <- '
+  M_binary ~ X_continuous
+  Y_count ~ M_binary + X_continuous
+'
+fit <- cfa(model.Lavaan, data=Data, std.lv=TRUE)
+
+# Plot path diagram:
+library(semPlot)
+semPaths(fit,
+         title=FALSE, curvePivot = TRUE,
+         edgeLabels = c("AME = 0.23", "AME = 1.5", "AME = 0.5"),
+         edge.label.cex = 2,
+         nodeLabels = list(expression("M (binary)"), expression("Y (count)"), expression("X (continuous)")),
+         layout = "spring",
+         sizeMan = 14,
+         shapeMan = "rectangle",
+         border.color = "dodgerblue4",
+         border.width = 3,
+         node.width = 1.75,
+         node.height = 1,
+         mar = c(4,6,5,6))
+```
+]
+
+
+???
+  - One of the main advantages
+  - However, given the number of combination of variable types, it is best to consider some basic interpretation principles
+  - Review principles and show meaning in figure
+    1. So with M being binary, the AME is a Marginal Probability or Risk
+      - A one unit increase in X is associated with a .23 increase in the risk of M.
+    2. In other words, it is the effect of X on Y through M (it should be in the outcomes units)
+      - A one unit increase in X is associated with a `0.23 * 1.5 = 0.345` increase in the count of Y.
+    3. No big surprises here since these are essentially the regression.
+
+---
+# Assumptions of the Approach
+
+.left-column[
+</br></br>
+#### The same assumptions as linear models or generalized linear models hold.
+
+</br></br></br>
+.coral[#### Only additional assumption with AME:]
+]
+
+--
+
+.right-column[
+1. Correct distribution (normal in linear models)
+
+1. Proper variance (homoskedastic in linear models)
+
+1. Linear in parameters
+
+1. Random sample
+
+1. No measurement error
+
+1. No omitted influences
+
+
+### Marginal effect can be described *additively* (after accounting for all the covariates)
+]
+
+???
+  - all same assumptions
+  - Only additional one -- additively
+
+
+---
+# Creating Software
+
+### In `R` and `Shiny`
+
+.pull-left[.large[
+Makes working with data easier, reproducible, and more interpretable
+]]
+
+.pull-right[.large[
+Provides the ability to use new methods
+]]
+
+--
+.center[
+### .dcoral[Two of my software packages:]
+.large[
+The `furniture` R package
+
+The `MarginalMediation` R package
+]]
+
+---
+# `furniture`
+
+.large[
+Table 1 (The usual "Table 1" in publications)]
+
+.pull-left[
+```{r, eval=FALSE, message=FALSE}
+library(furniture)
+table1(nhanes,
+       Age, GeneralHealth, Sex, Cancer, Asthma,
+       splitby = ~Overweight,
+       output = "latex2",
+       test = TRUE)
+```
+
+]
+
+.pull-right[
+![Table 1](table1_fig.png)
+]
+
+---
+# `furniture`
+
+.large[
+Table C (for Correlation)]
+
+```{r, eval=FALSE, message=FALSE}
+library(furniture)
+tableC(nhanes,
+       Age, ModeActivity, VigActivity, Meals,
+       output = "latex2",
+       type = "pearson")
+```
+
+![Pearson Correlation and P-Values](tableC_fig.png)
+
+
+---
+background-image: url(RJournal_snapshot.png)
+background-position: 50% 75%
+background-size: 950px
+
+# `furniture`
+
+.large[R Journal paper introducing the software and discusses the benefits to using a .dcoral[reproducible approach to making tables]]
+
+---
+# `MarginalMediation`
+
+.large[.large[
+New package to use Marginal Mediation Analysis
+]]
+
+```{r, echo=FALSE, message=FALSE}
+library(furniture)
+```
+```{r, message=FALSE, warning=FALSE, results='hide'}
+library(MarginalMediation)
+fit = mma(nhanes_2010,
+          marijuana ~ home_meals + gender + age + asthma,
+          home_meals ~ gender + age + asthma,
+          age ~ gender + asthma,
+          family = c(binomial, poisson, gaussian),
+          ind_effects = c("genderFemale-home_meals",
+                          "age-home_meals",
+                          "asthmaNo-home_meals",
+                          "genderFemale-age",
+                          "asthmaNo-age"),
+          boot = 500)
+```
+
+---
+
+```{r, echo=FALSE, comment = "              "}
+fit
+```
+
+---
+# Conclusions
+
+.huge[As a Health Data Scientist I aim to:]
+
+.large[.large[
+1. .nicegreen[Help vulnerable populations] have better health
+
+2. .nicegreen[Help researchers] helping vulnerable populations be more effective
+]]
+
+--
+.large[.large[
+My approach is based on .dcoral[applied data analysis], .bluer[method synthesis and creation], and .nicegreen[software development]
+]]
+
+---
+class: inverse, center, middle
+
+# Thank you.
+
+.footnote[
+All references cited herein can be found in the proposal manuscript.
+]
+
