@@ -1,3 +1,3 @@
-# My Job Talks in 2017
+# Health Data Science
 
-My "job talk" presentations for 2017 cycle demonstrating my background and training in Health Data Science.
+Includes materials used to give presentations on **Health Data Science**. See [http://tysonbarrett.com/healthdatascience](http://tysonbarrett.com/healthdatascience/index.html#1) for the most recent presentation.
