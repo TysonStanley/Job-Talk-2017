@@ -1,6 +1,6 @@
 ---
 title: "Health Data Science"
-subtitle: "Investigating in and providing tools for public health research"
+subtitle: "Investigating in and providing tools for prevention science research"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -16,8 +16,21 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+class: inverse, middle, center
+
+# Any fool can know. The point is to understand.
+### -- Albert Einstein --
+
+---
+class: inverse, middle, center
+
+# The problem with quotes found on the internet is that they are often not true. 
+### -- Abraham Lincoln --
+
+---
+
 .right[
-# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
 ]
 
 -------
@@ -26,300 +39,53 @@ options(htmltools.dir.version = FALSE)
 count: false
 
 .right[
-# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
 
 --------
 
 .Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
-]
-]
-
-???
-I want to explain why I came to love Health Data Science, what I've done so far, and things I'm planning on doing
-
----
-background-image: url(MethodTraining_fig.jpg)
-background-position: 99% 75%
-background-size: 700px
-
-# My Background is Wide
-
-
-.huge[.bluer[
-1. Quantitative Psychology
-
-2. Social Epidemiology
-
-3. Economics
-
-4. Machine Learning
-
-5. Statistics
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in Prevention Science
 ]]
 
----
-# What can you do with that?
-
-.huge[
-This background provided the tools to:
-]
-
-.large[.large[
-1. .nicegreen[Help vulnerable populations] have better health
-
-2. .nicegreen[Help researchers] helping vulnerable populations be more effective
-]]
-
-<br>
-
-.center[.large[.large[I do this by .bluer[applying] and .dcoral[developing] quantitative methods and data analytics]]]
-
-???
-I see them both as part of the same overall goal -- help individuals (including researchers)
 
 ---
-class: inverse, center, middle
-count: false
-# Helping Vulnerable Populations
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-- Childhood and Adolescent Hearing Loss
-
-- Health Economics of Pediatric In-Patient Stays
-]
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-- Childhood and Adolescent Hearing Loss
-
-- .whiteish[Health Economics of Pediatric In-Patient Stays]
-]
-
----
-# Childhood and Adolescent Hearing Loss
+# Health Data Science
 
 .pull-left[
-.dcoral[.Huge[Ground Level Research]
 .huge[
-1. Prevalence
-2. Temporal Trends
-3. Measurement
-]]]
+- .nicegreen[Pragmatic solutions] to research problems
 
---
+- .dcoral[Broad applicability] across the Prevention Sciences
+]]
 
 .pull-right[
-.bluer[.Huge[Higher Level Research]
 .huge[
-4. Policy
-5. Practice
-]]]
+- Focus is on .bluer[reproducibility and interpretability]
 
-???
-I want to talk about one of the projects that addressed the prevalence and trends of adolescent hearing loss
-
----
-# Childhood Hearing Loss: Prevalence and Trends
-
-.large[.large[
-Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
+- Combines useful methods across multiple fields to .nicegreen[extract actionable information]
 ]]
 
-.large[.large[
-Serious **implications** for Healthcare:
-]]
+---
+# My Background and My Approach
 
---
-.large[.large[
-1. Need to **investigate the cause** (iPods to blame?)
-2. Need to **adjust care** (ask more about hearing in regular visits?)
-3. Need to make **new policies** to curb trend (reduce volume levels on iPods?)
-]]
-
---
-.large[.large[.dcoral[But...] Conclusions only based on two time points]]
+![](fig_wide_background.jpg)
 
 
 ---
-# NHANES
+# What I've Done So Far
 
+<br>
 .huge[
-The large, nationally-representative health survey now has .dcoral[4 time points available].]
 
-.large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
+1. Providing methods and tools for prevention researchers
 
----
-background-image: url(Figure1_Final.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-???
-This figure shows the prevalence per 1000 adolescents across hearing loss level and laterality of the loss. 
-There does look to be an increase with a precipitous drop in 2010. 
-Ultimately, we can't conclude it is increasing.
-Models suggested differences between 1994 and 2008 were common across combinations of degree and laterality.
-But no differences between 1994 and 2010.
-Is it due to sampling??
-We need more data but NHANES stopped collecting this data in 2010
-Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-
-- .whiteish[Childhood and Adolescent Hearing Loss]
-
-- Health Economics of Pediatric In-Patient Stays
+2. Applying advanced data analytic tools to childhood health research
 ]
-
----
-# Health Economics of Pediatric In-Patient Stays
-
-.large[.large[Investigating the **daily costs** of pediatric in-patient stays]]
-
-.large[
-- Using administrative and financial data from a pediatric hospital
-- Hospital uses system to record **daily .dcoral[costs]** (which is rare)
-]
---
-.large[
-- Previous work suggests costs not uniformly distributed across days of a stay
-- However, previous work used: 1) charges, 2) costs but only for the ICU.
-]
-
---
-.large[.large[Results have implications for .nicegreen[*cost reduction interventions*] and .bluer[*resource allocation*]]]
-
-???
-Daily cost data is hard to come by: usually the "cost" data is some proportion of charges, is accrued across the stay, or both.
-
----
-# Health Economics of Pediatric In-Patient Stays
-
-.huge[
-- Data on 44,163 patients
-- Ages 1 - 18
-- From 2003 to 2013
-- In-patient stays
-- Single Pediatric Hospital
-]
-
----
-background-image: url(los_costs_fig.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-```{r, message = FALSE, echo=FALSE, warning=FALSE, eval=FALSE}
-library(tidyverse)
-tab1 = tibble(
-  General_Mean = c(5.07, 4941, 4700, 9641),
-  General_Var  = c(3.43, 5109, 6373, 11021)/sqrt(31527),
-  ICU_Gen_Mean = c(4.80, 5022, 4642, 9665),
-  ICU_Gen_Var  = c(7.17, 11135, 11401, 22298)/sqrt(8353),
-  ICU_ICU_Mean = c(4.00, 10593, 12056, 22649),
-  ICU_ICU_Var  = c(5.62, 17881, 21185, 38377)/sqrt(8353),
-  ID = c("Length of Stay", "Fixed Costs", "Variable Costs", "Total Costs")
-) %>%
-  furniture::long(c(grep("Mean", names(.))),
-                  c(grep("Var", names(.))),
-                  v.names = c("Mean", "SE"),
-                  times = c("General", "Out of ICU", "In ICU")) %>%
-  mutate(group = c(rep("General", 4), rep("ICU", 8)))
-los = tab1 %>%
-  filter(ID == "Length of Stay")
-costs = tab1 %>%
-  filter(ID != "Length of Stay")
-p1 = los %>%
-  ggplot(aes(x = time, y = Mean)) +
-    geom_bar(stat = "identity", alpha = .6,
-             aes(fill = group, color = group)) +
-    geom_errorbar(aes(ymin = Mean - 1.96 * SE, ymax = Mean + 1.96 * SE,
-                      color = group), width = .4) +
-    facet_grid(~group, space = "free", scales = "free") +
-    scale_fill_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
-    scale_color_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
-    labs(x = " \n\n\n ",
-         y = "Length of Stay",
-         fill = "Where Cost Accrued",
-         title = "Length of Stay",
-         subtitle = "by General Care and ICU") +
-  anteo::theme_anteo_wh()
-p = position_dodge(width = .7)
-p2 = costs %>%
-  filter(ID != "Total Costs") %>%
-  ggplot(aes(x = time, y = Mean, group = ID)) +
-    geom_bar(stat = "identity", 
-             alpha = .6,
-             aes(fill = ID, color = ID), 
-             position = p) +
-    geom_errorbar(aes(ymin = Mean - 1.96 * SE, ymax = Mean + 1.96 * SE,
-                      color = ID), 
-                  width = .4,
-                  position = p) +
-    facet_grid(~group, space = "free", scales = "free") +
-    scale_fill_manual(values = c("dodgerblue4", "chartreuse4")) +
-    scale_color_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
-    labs(x = "",
-         y = "Cost per Stay",
-         fill = "",
-         title = "Costs",
-         subtitle = "by Variable and Fixed Costs, stratified by General Care/ICU") +
-  anteo::theme_anteo_wh() +
-  theme(legend.position = "bottom",
-        axis.line = element_line(color = "lightgrey"))
-
-los_costs = gridExtra::grid.arrange(p1, p2, ncol = 2)
-ggsave("los_costs_fig.pdf", los_costs, width = unit(10, 'in'), height = unit(7, 'in'))
-```
-
-
-
----
-background-image: url(Figure1_DailyCosts.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-???
-We looked at the average costs across the first twenty days of the stays. We assessed this by breaking down the total cost into sub-costs.
-
-1. Variable vs. Fixed
-2. Therapy, Diagnostic, Overhead
-3. Location of Cost
-4. Insurance type
-
-Graphically we can pick out some immediate trends:
-
-1. The first day in hospital is most expensive (much of it driven by therapy costs with some diagnostic costs)
-2. Variable and fixed costs contribute approximately equally to total costs across the first 20 days
-3. The general pattern of high day one costs then a drop in costs holds across the CICU, PICU and General Care
-4. Costs are lower for uninsured compared to private and government insurance
-
-These findings extend previous findings in the ICU; showing costs are not uniformly distributed across days.
-
-Cost reduction techniques, if shaving off one of the last days at the risk of the individual re-visiting, may not be doing as much as previously thought.
-
-Also interesting is the difference between insurance types. If the uninsured that are receiving cheaper care have equal outcomes to others, this is important.
-
-
-Now we are going to switch gears a bit and discuss how I'm helping researchers help individuals
 
 
 ---
 class: inverse, center, middle
-# Helping Researchers
+# Providing Methods and Tools
 
 ---
 # Providing Methods and Tools
@@ -336,7 +102,7 @@ class: inverse, center, middle
 --
 .nicegreen[
 .pull-right[.center[
-### Creating Software in `R` and `Shiny`
+### Creating Software in `R`
 
 .pull-left[.large[
 Makes working with data easier, reproducible, and more interpretable
@@ -583,7 +349,7 @@ data.frame(
   - There are five common approaches, but we don't have time to talk about each
   - Ultimately, nothing great.
 
-Luckily, in economics especially, there is a simple technique known as Average Marginal Effects.
+Luckily, there is a simple technique known as Average Marginal Effects.
 
 ---
 # Average Marginal Effects
@@ -611,6 +377,13 @@ AME_{k} = \frac{1}{n} \sum_i^n [ F(\beta x_i | x_i = 1) - F(\beta x_i | x_i = 0)
 $$
 where $F(\beta x_i | x_i = 1)$ is the predicted value of the $ith$ observation when the dummy variable equals one and $F(\beta x_i | x_i = 0)$ is the predicted value when the dummy value equals zero. 
 ]
+
+--
+
+<br>
+
+.center[.large[.dcoral[EXAMPLE]]]
+
 
 ???
   - Simply, they are the average of the marginal effects
@@ -676,7 +449,7 @@ where this $e_i$ also is normally distributed with $\mu = 0$ and $SD = 1$.
 .huge[.dcoral[Conditions] Varied for the simulation:]
 
 .large[.large[
-- Varying sample size (100 - 1000)
+- Varying sample size (50 - 1000)
 - Varying effect size of each path (small, medium, large)
 - Varying Mediator's distribution (binomial, poisson)
 ]]
@@ -699,32 +472,36 @@ Outcomes will be:
 3. confidence interval coverage (i.e., does the confidence interval cover the proper interval?), and 
 4. how closely $a \times b + c'$ is to $c$ (i.e., does the indirect plus the direct effect equal the total effect?)
 
-
 ---
 # Simulation Results
 
-.large[.large[
-1. $a \times b + c' \approx c$ (within rounding error, even at low sample sizes)
-2. Consistent parameters (even at low samples sizes)
-]]
+## Indirect + Direct = Total
+.huge[
+Importantly, $a \times b + c' = c$ (within rounding error, even at low sample sizes)
 
-.footnote[
-Results are preliminary.
+This means: 
+
+1. We can be more confident in the estimates
+2. We can assess the indirect and direct effects as a proportion of the total effect.
 ]
 
---
 
-#### Count and Binary Mediators (preliminary)
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(tidyverse)
-tibble::tibble(
-  `Indirect Path` = c("Small-Small", "Small-Medium", "Small-Large", "Medium-Medium", "Medium-Large", "Large-Large"),
-  `Count Mediator: Sample Size`   = c("200", 100, 50, "<50", "<50", "<50"),
-  `Binary Mediator: Sample Size`   = c("500", 200, 200, 100, 100, 50)
-) %>%
-  DT::datatable(options = list(dom = "t"),
-                rownames = FALSE)
-```
+
+---
+background-image: url(sim_fig_acc.png)
+background-position: 85% 90%
+background-size: 800px
+
+# Estimation <br> Consistency
+
+
+
+---
+background-image: url(sim_fig_power.png)
+background-position: 50% 85%
+background-size: 900px
+
+# Statistical Power
 
 
 ???
@@ -739,6 +516,13 @@ Count
 1. Small = 1.34
 2. Medium = 1.82
 3. Large = 3.01
+
+---
+background-image: url(sim_fig_ci.png)
+background-position: 85% 90%
+background-size: 750px
+
+# CI Coverage
 
 
 ---
@@ -920,11 +704,14 @@ library(furniture)
 ```
 ```{r, message=FALSE, warning=FALSE, results='hide'}
 library(MarginalMediation)
-fit = mma(nhanes_2010,
-          marijuana ~ home_meals + gender + age + asthma,
-          home_meals ~ gender + age + asthma,
-          age ~ gender + asthma,
-          family = c(binomial, poisson, gaussian),
+
+pathbc = glm(marijuana ~ home_meals + gender + age + asthma, data = nhanes_2010, family = "binomial")
+patha1 = glm(home_meals ~ gender + age + asthma, data = nhanes_2010, family = "poisson")
+patha2 = glm(age ~ gender + asthma, data = nhanes_2010, family = "poisson")
+
+fit = mma(pathbc,
+          patha1,
+          patha2,
           ind_effects = c("genderFemale-home_meals",
                           "age-home_meals",
                           "asthmaNo-home_meals",
@@ -939,28 +726,303 @@ fit = mma(nhanes_2010,
 fit
 ```
 
----
-# Conclusions
 
-.huge[As a Health Data Scientist I aim to:]
+
+
+---
+class: inverse, center, middle
+count: false
+# Childhood and Adolescent Health
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+
+- Adolescent Religiosity and Substance Use
+]
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+
+- .whiteish[Adolescent Religiosity and Substance Use]
+]
+
+---
+# Childhood and Adolescent Hearing Loss
+
+.pull-left[
+.dcoral[.Huge[Ground Level Research]
+.huge[
+1. Prevalence
+2. Temporal Trends
+3. Measurement
+]]]
+
+--
+
+.pull-right[
+.bluer[.Huge[Higher Level Research]
+.huge[
+4. Policy
+5. Practice
+]]]
+
+???
+I want to talk about one of the projects that addressed the prevalence and trends of adolescent hearing loss
+
+---
+# Childhood Hearing Loss: Prevalence and Trends
 
 .large[.large[
-1. .nicegreen[Help vulnerable populations] have better health
+Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
+]]
 
-2. .nicegreen[Help researchers] helping vulnerable populations be more effective
+.large[.large[
+Serious **implications** for Healthcare:
 ]]
 
 --
 .large[.large[
-My approach is based on .dcoral[applied data analysis], .bluer[method synthesis and creation], and .nicegreen[software development]
+1. Need to **investigate the cause** (iPods to blame?)
+2. Need to **adjust care** (ask more about hearing in regular visits?)
+3. Need to make **new policies** to curb trend (reduce volume levels on iPods?)
 ]]
+
+--
+.large[.large[.dcoral[But...] Conclusions only based on two time points]]
+
+
+---
+# NHANES
+
+.huge[
+The large, nationally-representative health survey now has .dcoral[4 time points available].]
+
+.large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
+
+---
+background-image: url(Figure1_Final.jpg)
+background-position: 50% 70%
+background-size: 900px
+
+???
+This figure shows the prevalence per 1000 adolescents across hearing loss level and laterality of the loss. 
+There does look to be an increase with a precipitous drop in 2010. 
+Ultimately, we can't conclude it is increasing.
+Models suggested differences between 1994 and 2008 were common across combinations of degree and laterality.
+But no differences between 1994 and 2010.
+Is it due to sampling??
+We need more data but NHANES stopped collecting this data in 2010
+Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
+
+Now we are going to switch gears a bit and discuss how I'm helping researchers help individuals
+
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- .whiteish[Childhood and Adolescent Hearing Loss]
+
+- Adolescent Religiosity and Substance Use
+]
+---
+# Adolescent Religiosity and Substance Use
+
+.large[.large[
+Replication of Ford and Hill (2012) that used categorical mediators and outcomes
+
+1. Demonstrates the use of Marginal Mediation Analysis
+2. Demonstrates the interpretability increase in using MMA over the (good) approach of Ford and Hill
+3. Highlights important (potentially) causal pathways leading to substance use
+]]
+
+
+---
+background-image: url(fig_relig_sa.jpg)
+background-position: 50% 85%
+background-size: 800px
+
+
+```{r, eval=FALSE, echo=FALSE}
+library(MarginalMediation)
+library(tidyverse)
+
+load(file = "~/Dropbox/1 Dissertation/Manuscript_MM/Data/NSDUH_2014_Results.rda")
+
+directs_un = list(fit_tob, fit_rx, fit_mar, fit_ill) %>%
+  map(~.x$dir_effects) %>%
+  do.call("rbind", .) %>%
+  data.frame(.) %>%
+  select(Direct, Lower, Upper) %>%
+  data.frame(., row.names = gsub("religious", "Religiousity (Direct)", row.names(.))) %>%
+  rownames_to_column() %>%
+  mutate(Outcome = c(rep("Tobacco", 1), rep("Prescription", 1),
+                     rep("Marijuana", 1), rep("Illicit", 1))) %>%  
+  select(Outcome, rowname, Direct, Lower, Upper) %>%
+  set_names(c("Outcome", "Path", "Indirect", "Lower", "Upper")) %>%
+  mutate(CI = paste0("(", round(Lower,4), ", ", round(Upper,4), ")")) %>%
+  select(-CI) %>%
+  mutate(type = "Unadjusted")
+directs_adj = list(fit_tob2, fit_rx2, fit_mar2, fit_ill2) %>%
+  map(~.x$dir_effects) %>%
+  do.call("rbind", .) %>%
+  data.frame(.) %>%
+  select(Direct, Lower, Upper) %>%
+  data.frame(., row.names = gsub("religious", "Religiousity (Direct)", row.names(.))) %>%
+  rownames_to_column() %>%
+  mutate(Outcome = c(rep("Tobacco", 1), rep("Prescription", 1),
+                     rep("Marijuana", 1), rep("Illicit", 1))) %>%  
+  select(Outcome, rowname, Direct, Lower, Upper) %>%
+  set_names(c("Outcome", "Path", "Indirect", "Lower", "Upper")) %>%
+  mutate(CI = paste0("(", round(Lower,4), ", ", round(Upper,4), ")")) %>%
+  select(-CI) %>%
+  mutate(type = "Adjusted")
+  
+  
+unadjusted = list(fit_tob, fit_rx, fit_mar, fit_ill) %>%
+  map(~.x$ind_effects) %>%
+  do.call("rbind", .) %>%
+  data.frame(.) %>%
+  select(Indirect, Lower, Upper) %>%
+  data.frame(., row.names = gsub("religious-", "Religiousity Through", row.names(.))) %>%
+  data.frame(., row.names = gsub("dep", "\nDepression", row.names(.))) %>%
+  data.frame(., row.names = gsub("self", "\nRespondent Views", row.names(.))) %>%
+  data.frame(., row.names = gsub("peer", "\nPeer Views", row.names(.))) %>%
+  rownames_to_column() %>%
+  mutate(Outcome = c(rep("Tobacco", 3), rep("Prescription", 3),
+                     rep("Marijuana", 3), rep("Illicit", 3))) %>%
+  select(Outcome, rowname, Indirect, Lower, Upper) %>%
+  set_names(c("Outcome", "Path", "Indirect", "Lower", "Upper")) %>%
+  mutate(CI = paste0("(", round(Lower,4), ", ", round(Upper,4), ")")) %>%
+  select(-CI) %>%
+  mutate(type = "Unadjusted") %>%
+  rbind(., directs_un)
+
+adjusted = list(fit_tob2, fit_rx2, fit_mar2, fit_ill2) %>%
+  map(~.x$ind_effects) %>%
+  do.call("rbind", .) %>%
+  data.frame(.) %>%
+  select(Indirect, Lower, Upper) %>%
+  data.frame(., row.names = gsub("religious-", "Religiousity Through", row.names(.))) %>%
+  data.frame(., row.names = gsub("dep", "\nDepression", row.names(.))) %>%
+  data.frame(., row.names = gsub("self", "\nRespondent Views", row.names(.))) %>%
+  data.frame(., row.names = gsub("peer", "\nPeer Views", row.names(.))) %>%
+  rownames_to_column() %>%
+  mutate(Outcome = c(rep("Tobacco", 3), rep("Prescription", 3),
+                     rep("Marijuana", 3), rep("Illicit", 3))) %>%
+  select(Outcome, rowname, Indirect, Lower, Upper) %>%
+  set_names(c("Outcome", "Path", "Indirect", "Lower", "Upper")) %>%
+  mutate(CI = paste0("(", round(Lower,4), ", ", round(Upper,4), ")")) %>%
+  select(-CI) %>%
+  mutate(type = "Adjusted") %>%
+  rbind(., directs_adj)
+
+inds = rbind(unadjusted, adjusted) %>%
+  data.frame %>%
+  mutate(type = factor(type, levels = c("Unadjusted", "Adjusted"))) %>%
+  mutate(Path = gsub("[0-9]","", Path)) %>%
+  mutate(Outcome = factor(Outcome, levels = c("Tobacco", "Prescription",
+                                              "Marijuana", "Illicit")))
+
+p = position_dodge(width = .2)
+ggplot(inds, aes(Path, Indirect, group = type, color = type)) +
+  geom_hline(yintercept = 0, color = "darkgrey") +
+  geom_point(position = p, alpha = .8) +
+  geom_errorbar(aes(ymin = Lower, ymax = Upper),
+                position = p, alpha = .8) +
+  facet_wrap(~Outcome) +
+  coord_flip() +
+  anteo::theme_anteo_wh() +
+  theme(legend.position = "bottom",
+        axis.line = element_line(color = "darkgrey"),
+        panel.spacing = unit(.3, "in")) +
+  scale_color_manual(values = c("chartreuse4", "coral2")) +
+  labs(x = "", y = "",
+       color = "")
+ggsave(file = "docs/fig_relig_sa.jpg", height = 7, width = 9, units = "in")
+```
+
+
+---
+# Adolescent Religiosity and Substance Use
+### Proportion of Effect that is Mediated
+
+```{r, echo=FALSE}
+load(file = "~/Dropbox/1 Dissertation/Manuscript_MM/Data/NSDUH_2014_Results.rda")
+
+tob_perc = fit_tob$ind_effects[,3]/(fit_tob$dir_effects[,1] + sum(fit_tob$ind_effects[,3]))
+rx_perc  = fit_rx$ind_effects[,3]/(fit_rx$dir_effects[,1] + sum(fit_rx$ind_effects[,3]))
+mar_perc = fit_mar$ind_effects[,3]/(fit_mar$dir_effects[,1] + sum(fit_mar$ind_effects[,3]))
+ill_perc = fit_ill$ind_effects[,3]/(fit_ill$dir_effects[,1] + sum(fit_ill$ind_effects[,3]))
+
+cbind(tob_perc, rx_perc, mar_perc, ill_perc) %>%
+  data.frame %>%
+  set_names(c("Tobacco", "Prescription", "Marijuana", "Illicit")) %>%
+  map_df(~.x*100) %>%
+  mutate(Mediator = c("Respondent Views", "Peer Views", "Depression")) %>%
+  select(Mediator, Tobacco, Prescription, Marijuana, Illicit) %>%
+  map_if(is.numeric, round, 1) %>%
+  data.frame %>%
+  DT::datatable(options = list(dom = "t"))
+```
+
+
+
+---
+class: inverse, middle, center
+
+# Future Directions
+
+---
+# Future Directions
+
+.pull-left[.large[.large[
+### Continue:
+
+- My work with Marginal Mediation Analysis
+
+- Software development that helps researchers
+
+]]]
+
+--
+
+.pull-right[.large[.large[
+### Increase:
+
+- My methodological work regarding Mixture Modeling (with Dr. Bethany Bray)
+
+- My research line regarding childhood substance use (with Dr. Jenn Maggs)
+
+]]]
+
+
+---
+# Conclusions
+
+.huge[
+Ultimately, my work is based on .dcoral[**increasing understanding and interpretability**] through:
+
+1. Method and tool development
+2. Prevention research
+]
+
 
 ---
 class: inverse, center, middle
 
 # Thank you.
 
-.footnote[
-All references cited herein can be found in the proposal manuscript.
-]
 

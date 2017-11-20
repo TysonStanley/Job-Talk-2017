@@ -15,15 +15,29 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-
+# Health Data Science
+## Investigating in and providing tools for prevention science research
 
 ---
 
 
 
 
+class: inverse, middle, center
+
+# Any fool can know. The point is to understand.
+### -- Albert Einstein --
+
+---
+class: inverse, middle, center
+
+# The problem with quotes found on the internet is that they are often not true. 
+### -- Abraham Lincoln --
+
+---
+
 .right[
-# Public Health &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
+# Prevention Science &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
 ]
 
 -------
@@ -32,239 +46,53 @@ class: center, middle, inverse, title-slide
 count: false
 
 .right[
-# Public Health &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
+# Prevention Science &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
 
 --------
 
 .Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
-]
-]
-
-???
-I want to explain why I came to love Health Data Science, what I've done so far, and things I'm planning on doing
-
----
-background-image: url(MethodTraining_fig.jpg)
-background-position: 99% 75%
-background-size: 700px
-
-# My Background is Wide
-
-
-.huge[.bluer[
-1. Quantitative Psychology
-
-2. Social Epidemiology
-
-3. Economics
-
-4. Machine Learning
-
-5. Statistics
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in Prevention Science
 ]]
 
----
-# What can you do with that?
-
-.huge[
-This background provided the tools to:
-]
-
-.large[.large[
-1. .nicegreen[Help vulnerable populations] have better health
-
-2. .nicegreen[Help researchers] helping vulnerable populations be more effective
-]]
-
-&lt;br&gt;
-
-.center[.large[.large[I do this by .bluer[applying] and .dcoral[developing] quantitative methods and data analytics]]]
-
-???
-I see them both as part of the same overall goal -- help individuals (including researchers)
 
 ---
-class: inverse, center, middle
-count: false
-# Helping Vulnerable Populations
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-- Childhood and Adolescent Hearing Loss
-
-- Health Economics of Pediatric In-Patient Stays
-]
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-- Childhood and Adolescent Hearing Loss
-
-- .whiteish[Health Economics of Pediatric In-Patient Stays]
-]
-
----
-# Childhood and Adolescent Hearing Loss
+# Health Data Science
 
 .pull-left[
-.dcoral[.Huge[Ground Level Research]
 .huge[
-1. Prevalence
-2. Temporal Trends
-3. Measurement
-]]]
+- .nicegreen[Pragmatic solutions] to research problems
 
---
+- .dcoral[Broad applicability] across the Prevention Sciences
+]]
 
 .pull-right[
-.bluer[.Huge[Higher Level Research]
 .huge[
-4. Policy
-5. Practice
-]]]
+- Focus is on .bluer[reproducibility and interpretability]
 
-???
-I want to talk about one of the projects that addressed the prevalence and trends of adolescent hearing loss
-
----
-# Childhood Hearing Loss: Prevalence and Trends
-
-.large[.large[
-Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
+- Combines useful methods across multiple fields to .nicegreen[extract actionable information]
 ]]
 
-.large[.large[
-Serious **implications** for Healthcare:
-]]
+---
+# My Background and My Approach
 
---
-.large[.large[
-1. Need to **investigate the cause** (iPods to blame?)
-2. Need to **adjust care** (ask more about hearing in regular visits?)
-3. Need to make **new policies** to curb trend (reduce volume levels on iPods?)
-]]
-
---
-.large[.large[.dcoral[But...] Conclusions only based on two time points]]
+![](fig_wide_background.jpg)
 
 
 ---
-# NHANES
+# What I've Done So Far
 
+&lt;br&gt;
 .huge[
-The large, nationally-representative health survey now has .dcoral[4 time points available].]
 
-.large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
+1. Providing methods and tools for prevention researchers
 
----
-background-image: url(Figure1_Final.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-???
-This figure shows the prevalence per 1000 adolescents across hearing loss level and laterality of the loss. 
-There does look to be an increase with a precipitous drop in 2010. 
-Ultimately, we can't conclude it is increasing.
-Models suggested differences between 1994 and 2008 were common across combinations of degree and laterality.
-But no differences between 1994 and 2010.
-Is it due to sampling??
-We need more data but NHANES stopped collecting this data in 2010
-Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
-
----
-# Helping Vulnerable Populations
-
-.huge[.dcoral[
-Let's discuss two projects in this area:]
-
-
-- .whiteish[Childhood and Adolescent Hearing Loss]
-
-- Health Economics of Pediatric In-Patient Stays
+2. Applying advanced data analytic tools to childhood health research
 ]
-
----
-# Health Economics of Pediatric In-Patient Stays
-
-.large[.large[Investigating the **daily costs** of pediatric in-patient stays]]
-
-.large[
-- Using administrative and financial data from a pediatric hospital
-- Hospital uses system to record **daily .dcoral[costs]** (which is rare)
-]
---
-.large[
-- Previous work suggests costs not uniformly distributed across days of a stay
-- However, previous work used: 1) charges, 2) costs but only for the ICU.
-]
-
---
-.large[.large[Results have implications for .nicegreen[*cost reduction interventions*] and .bluer[*resource allocation*]]]
-
-???
-Daily cost data is hard to come by: usually the "cost" data is some proportion of charges, is accrued across the stay, or both.
-
----
-# Health Economics of Pediatric In-Patient Stays
-
-.huge[
-- Data on 44,163 patients
-- Ages 1 - 18
-- From 2003 to 2013
-- In-patient stays
-- Single Pediatric Hospital
-]
-
----
-background-image: url(los_costs_fig.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-
-
-
-
----
-background-image: url(Figure1_DailyCosts.jpg)
-background-position: 50% 70%
-background-size: 900px
-
-???
-We looked at the average costs across the first twenty days of the stays. We assessed this by breaking down the total cost into sub-costs.
-
-1. Variable vs. Fixed
-2. Therapy, Diagnostic, Overhead
-3. Location of Cost
-4. Insurance type
-
-Graphically we can pick out some immediate trends:
-
-1. The first day in hospital is most expensive (much of it driven by therapy costs with some diagnostic costs)
-2. Variable and fixed costs contribute approximately equally to total costs across the first 20 days
-3. The general pattern of high day one costs then a drop in costs holds across the CICU, PICU and General Care
-4. Costs are lower for uninsured compared to private and government insurance
-
-These findings extend previous findings in the ICU; showing costs are not uniformly distributed across days.
-
-Cost reduction techniques, if shaving off one of the last days at the risk of the individual re-visiting, may not be doing as much as previously thought.
-
-Also interesting is the difference between insurance types. If the uninsured that are receiving cheaper care have equal outcomes to others, this is important.
-
-
-Now we are going to switch gears a bit and discuss how I'm helping researchers help individuals
 
 
 ---
 class: inverse, center, middle
-# Helping Researchers
+# Providing Methods and Tools
 
 ---
 # Providing Methods and Tools
@@ -281,7 +109,7 @@ class: inverse, center, middle
 --
 .nicegreen[
 .pull-right[.center[
-### Creating Software in `R` and `Shiny`
+### Creating Software in `R`
 
 .pull-left[.large[
 Makes working with data easier, reproducible, and more interpretable
@@ -327,13 +155,13 @@ Used extensively in Prevention Science research (used somewhat in Epidemiology a
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 --
 
-<div id="htmlwidget-374c8f5458b3d7a65138" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-374c8f5458b3d7a65138">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6ef0bf7bf7f1d3e577aa" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6ef0bf7bf7f1d3e577aa">{"x":{"filter":"none","data":[["Indirect Effect","Direct Effect","Total Effect"],["a * b","c'","a * b + c'"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Effects of Interest<\/th>\n      <th>Definitions<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 ???
   - Series of regressions
@@ -419,21 +247,21 @@ Ultimately, mediation doesn't work well with categorical mediators/outcomes. But
 ---
 # Current Approaches
 
-<div id="htmlwidget-f3db54a6517bd0d2cfa0" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f3db54a6517bd0d2cfa0">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-aeb2751001b395deac2c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aeb2751001b395deac2c">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-786ff4e3be7d7a02c059" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-786ff4e3be7d7a02c059">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-73df8a21052ae854630a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-73df8a21052ae854630a">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ???
   - There are five common approaches, but we don't have time to talk about each
   - Ultimately, nothing great.
 
-Luckily, in economics especially, there is a simple technique known as Average Marginal Effects.
+Luckily, there is a simple technique known as Average Marginal Effects.
 
 ---
 # Average Marginal Effects
@@ -461,6 +289,13 @@ AME_{k} = \frac{1}{n} \sum_i^n [ F(\beta x_i | x_i = 1) - F(\beta x_i | x_i = 0)
 $$
 where `\(F(\beta x_i | x_i = 1)\)` is the predicted value of the `\(ith\)` observation when the dummy variable equals one and `\(F(\beta x_i | x_i = 0)\)` is the predicted value when the dummy value equals zero. 
 ]
+
+--
+
+&lt;br&gt;
+
+.center[.large[.dcoral[EXAMPLE]]]
+
 
 ???
   - Simply, they are the average of the marginal effects
@@ -526,7 +361,7 @@ where this `\(e_i\)` also is normally distributed with `\(\mu = 0\)` and `\(SD =
 .huge[.dcoral[Conditions] Varied for the simulation:]
 
 .large[.large[
-- Varying sample size (100 - 1000)
+- Varying sample size (50 - 1000)
 - Varying effect size of each path (small, medium, large)
 - Varying Mediator's distribution (binomial, poisson)
 ]]
@@ -549,24 +384,36 @@ Outcomes will be:
 3. confidence interval coverage (i.e., does the confidence interval cover the proper interval?), and 
 4. how closely `\(a \times b + c'\)` is to `\(c\)` (i.e., does the indirect plus the direct effect equal the total effect?)
 
-
 ---
 # Simulation Results
 
-.large[.large[
-1. `\(a \times b + c' \approx c\)` (within rounding error, even at low sample sizes)
-2. Consistent parameters (even at low samples sizes)
-]]
+## Indirect + Direct = Total
+.huge[
+Importantly, `\(a \times b + c' = c\)` (within rounding error, even at low sample sizes)
 
-.footnote[
-Results are preliminary.
+This means: 
+
+1. We can be more confident in the estimates
+2. We can assess the indirect and direct effects as a proportion of the total effect.
 ]
 
---
 
-#### Count and Binary Mediators (preliminary)
-<div id="htmlwidget-b70aa6562862c5ae7d3a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b70aa6562862c5ae7d3a">{"x":{"filter":"none","data":[["Small-Small","Small-Medium","Small-Large","Medium-Medium","Medium-Large","Large-Large"],["200","100","50","&lt;50","&lt;50","&lt;50"],["500","200","200","100","100","50"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Indirect Path<\/th>\n      <th>Count Mediator: Sample Size<\/th>\n      <th>Binary Mediator: Sample Size<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+---
+background-image: url(sim_fig_acc.png)
+background-position: 85% 90%
+background-size: 800px
+
+# Estimation &lt;br&gt; Consistency
+
+
+
+---
+background-image: url(sim_fig_power.png)
+background-position: 50% 85%
+background-size: 900px
+
+# Statistical Power
 
 
 ???
@@ -581,6 +428,13 @@ Count
 1. Small = 1.34
 2. Medium = 1.82
 3. Large = 3.01
+
+---
+background-image: url(sim_fig_ci.png)
+background-position: 85% 90%
+background-size: 750px
+
+# CI Coverage
 
 
 ---
@@ -599,7 +453,7 @@ Count
 --
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -731,11 +585,14 @@ New package to use Marginal Mediation Analysis
 
 ```r
 library(MarginalMediation)
-fit = mma(nhanes_2010,
-          marijuana ~ home_meals + gender + age + asthma,
-          home_meals ~ gender + age + asthma,
-          age ~ gender + asthma,
-          family = c(binomial, poisson, gaussian),
+
+pathbc = glm(marijuana ~ home_meals + gender + age + asthma, data = nhanes_2010, family = "binomial")
+patha1 = glm(home_meals ~ gender + age + asthma, data = nhanes_2010, family = "poisson")
+patha2 = glm(age ~ gender + asthma, data = nhanes_2010, family = "poisson")
+
+fit = mma(pathbc,
+          patha1,
+          patha2,
           ind_effects = c("genderFemale-home_meals",
                           "age-home_meals",
                           "asthmaNo-home_meals",
@@ -748,9 +605,9 @@ fit = mma(nhanes_2010,
 
 
 ```
-               -----
-               Marginal Mediation Analysis - mma()
-               
+               ┌───────────────────────────────┐
+               │  Marginal Mediation Analysis  │
+               └───────────────────────────────┘
                A marginal mediation model with:
                   2 mediators
                   5 indirect effects
@@ -759,46 +616,207 @@ fit = mma(nhanes_2010,
                   95% confidence interval
                   n = 1417 
                
-               -- Indirect Effect(s) --
-                                          Apath    Bpath Indirect    Lower   Upper
-               genderFemale-home_meals -1.35202 -0.00972  0.01314  0.00428 0.02505
-               age-home_meals          -0.05711 -0.00972  0.00056 -0.00005 0.00146
-               asthmaNo-home_meals     -0.00410 -0.00972  0.00004 -0.00663 0.00593
-               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00269 0.00217
-               asthmaNo-age             0.35028  0.00066  0.00023 -0.00329 0.00449
+               ── Indirect Effects ── 
+                                         A-path   B-path Indirect    Lower   Upper
+               genderFemale-home_meals -1.34842 -0.00973  0.01312  0.00337 0.02400
+               age-home_meals          -0.05713 -0.00973  0.00056 -0.00002 0.00141
+               asthmaNo-home_meals     -0.00410 -0.00973  0.00004 -0.00649 0.00645
+               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00263 0.00228
+               asthmaNo-age             0.35030  0.00066  0.00023 -0.00278 0.00348
                
-               -- Direct Effect(s) --
+               ── Direct Effects ── 
                               Direct    Lower   Upper
-               genderFemale  0.10329  0.05184 0.15608
-               age           0.00066 -0.00612 0.00776
-               asthmaNo     -0.00172 -0.07491 0.06507
-               -----
+               genderFemale  0.10430  0.04747 0.16528
+               age           0.00066 -0.00654 0.00745
+               asthmaNo     -0.00172 -0.07032 0.07741
+               ────
 ```
 
----
-# Conclusions
 
-.huge[As a Health Data Scientist I aim to:]
+
+
+---
+class: inverse, center, middle
+count: false
+# Childhood and Adolescent Health
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+
+- Adolescent Religiosity and Substance Use
+]
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+
+- .whiteish[Adolescent Religiosity and Substance Use]
+]
+
+---
+# Childhood and Adolescent Hearing Loss
+
+.pull-left[
+.dcoral[.Huge[Ground Level Research]
+.huge[
+1. Prevalence
+2. Temporal Trends
+3. Measurement
+]]]
+
+--
+
+.pull-right[
+.bluer[.Huge[Higher Level Research]
+.huge[
+4. Policy
+5. Practice
+]]]
+
+???
+I want to talk about one of the projects that addressed the prevalence and trends of adolescent hearing loss
+
+---
+# Childhood Hearing Loss: Prevalence and Trends
 
 .large[.large[
-1. .nicegreen[Help vulnerable populations] have better health
+Shargorodsky et al. (2010): .dcoral[adolescent hearing loss is] ⬆️ 
+]]
 
-2. .nicegreen[Help researchers] helping vulnerable populations be more effective
+.large[.large[
+Serious **implications** for Healthcare:
 ]]
 
 --
 .large[.large[
-My approach is based on .dcoral[applied data analysis], .bluer[method synthesis and creation], and .nicegreen[software development]
+1. Need to **investigate the cause** (iPods to blame?)
+2. Need to **adjust care** (ask more about hearing in regular visits?)
+3. Need to make **new policies** to curb trend (reduce volume levels on iPods?)
 ]]
+
+--
+.large[.large[.dcoral[But...] Conclusions only based on two time points]]
+
+
+---
+# NHANES
+
+.huge[
+The large, nationally-representative health survey now has .dcoral[4 time points available].]
+
+.large[.large[Using `R` with the `survey` package, I replicated Shargorodsky's study but included the two additional time points]]
+
+---
+background-image: url(Figure1_Final.jpg)
+background-position: 50% 70%
+background-size: 900px
+
+???
+This figure shows the prevalence per 1000 adolescents across hearing loss level and laterality of the loss. 
+There does look to be an increase with a precipitous drop in 2010. 
+Ultimately, we can't conclude it is increasing.
+Models suggested differences between 1994 and 2008 were common across combinations of degree and laterality.
+But no differences between 1994 and 2010.
+Is it due to sampling??
+We need more data but NHANES stopped collecting this data in 2010
+Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
+
+Now we are going to switch gears a bit and discuss how I'm helping researchers help individuals
+
+
+---
+# Childhood and Adolescent Health
+
+.huge[.dcoral[
+Let's discuss two of my recent projects in this area:]
+
+- .whiteish[Childhood and Adolescent Hearing Loss]
+
+- Adolescent Religiosity and Substance Use
+]
+---
+# Adolescent Religiosity and Substance Use
+
+.large[.large[
+Replication of Ford and Hill (2012) that used categorical mediators and outcomes
+
+1. Demonstrates the use of Marginal Mediation Analysis
+2. Demonstrates the interpretability increase in using MMA over the (good) approach of Ford and Hill
+3. Highlights important (potentially) causal pathways leading to substance use
+]]
+
+
+---
+background-image: url(fig_relig_sa.jpg)
+background-position: 50% 85%
+background-size: 800px
+
+
+
+
+
+---
+# Adolescent Religiosity and Substance Use
+### Proportion of Effect that is Mediated
+
+<div id="htmlwidget-5c79f2821892e10faf4e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5c79f2821892e10faf4e">{"x":{"filter":"none","data":[["1","2","3"],["Respondent Views","Peer Views","Depression"],[32.3,27.5,2.1],[21.6,32.4,7.3],[29.5,24.2,1.6],[20.4,24.3,3.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Mediator<\/th>\n      <th>Tobacco<\/th>\n      <th>Prescription<\/th>\n      <th>Marijuana<\/th>\n      <th>Illicit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+
+
+---
+class: inverse, middle, center
+
+# Future Directions
+
+---
+# Future Directions
+
+.pull-left[.large[.large[
+### Continue:
+
+- My work with Marginal Mediation Analysis
+
+- Software development that helps researchers
+
+]]]
+
+--
+
+.pull-right[.large[.large[
+### Increase:
+
+- My methodological work regarding Mixture Modeling (with Dr. Bethany Bray)
+
+- My research line regarding childhood substance use (with Dr. Jenn Maggs)
+
+]]]
+
+
+---
+# Conclusions
+
+.huge[
+Ultimately, my work is based on .dcoral[**increasing understanding and interpretability**] through:
+
+1. Method and tool development
+2. Prevention research
+]
+
 
 ---
 class: inverse, center, middle
 
 # Thank you.
-
-.footnote[
-All references cited herein can be found in the proposal manuscript.
-]
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

@@ -16,8 +16,21 @@ output:
 options(htmltools.dir.version = FALSE)
 ```
 
+class: inverse, middle, center
+
+# Any fool can know. The point is to understand.
+### -- Albert Einstein --
+
+---
+class: inverse, middle, center
+
+# The problem with quotes found on the internet is that they are often not true. 
+### -- Abraham Lincoln --
+
+---
+
 .right[
-# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
 ]
 
 -------
@@ -26,12 +39,12 @@ options(htmltools.dir.version = FALSE)
 count: false
 
 .right[
-# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
 
 --------
 
 .Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in Prevention Science
 ]
 ]
 
@@ -44,7 +57,6 @@ background-position: 99% 75%
 background-size: 700px
 
 # My Background is Wide
-
 
 .huge[.bluer[
 1. Quantitative Psychology
@@ -59,7 +71,7 @@ background-size: 700px
 ]]
 
 ---
-# What can you do with that?
+# What can someone do with that?
 
 .huge[
 This background provided the tools to:
@@ -68,12 +80,12 @@ This background provided the tools to:
 .large[.large[
 1. .nicegreen[Help vulnerable populations] have better health
 
-2. .nicegreen[Help researchers] helping vulnerable populations be more effective
+2. .nicegreen[Help researchers] helping vulnerable populations be even more effective
 ]]
 
 <br>
 
-.center[.large[.large[I do this by .bluer[applying] and .dcoral[developing] quantitative methods and data analytics]]]
+.center[.large[.large[I do this by .bluer[developing] and .dcoral[applying] quantitative methods and data analytics]]]
 
 ???
 I see them both as part of the same overall goal -- help individuals (including researchers)
@@ -87,9 +99,22 @@ count: false
 # Helping Vulnerable Populations
 
 .huge[.dcoral[
-Let's discuss one of my projects in this area:]
+Let's discuss two projects in this area:]
 
 - Childhood and Adolescent Hearing Loss
+
+- Health Economics of Pediatric In-Patient Stays
+]
+
+---
+# Helping Vulnerable Populations
+
+.huge[.dcoral[
+Let's discuss two projects in this area:]
+
+- Childhood and Adolescent Hearing Loss
+
+- .whiteish[Health Economics of Pediatric In-Patient Stays]
 ]
 
 ---
@@ -160,6 +185,149 @@ Is it due to sampling??
 We need more data but NHANES stopped collecting this data in 2010
 Ultimately, however, adolescent hearing loss is still an important public health risk (3 - 5% of kids)
 
+---
+# Helping Vulnerable Populations
+
+.huge[.dcoral[
+Let's discuss two projects in this area:]
+
+
+- .whiteish[Childhood and Adolescent Hearing Loss]
+
+- Health Economics of Pediatric In-Patient Stays
+]
+
+---
+# Health Economics of Pediatric In-Patient Stays
+
+.large[.large[Investigating the **daily costs** of pediatric in-patient stays]]
+
+.large[
+- Using administrative and financial data from a pediatric hospital
+- Hospital uses system to record **daily .dcoral[costs]** (which is rare)
+]
+--
+.large[
+- Previous work suggests costs not uniformly distributed across days of a stay
+- However, previous work used: 1) charges, 2) costs but only for the ICU.
+]
+
+--
+.large[.large[Results have implications for .nicegreen[*cost reduction interventions*] and .bluer[*resource allocation*]]]
+
+???
+Daily cost data is hard to come by: usually the "cost" data is some proportion of charges, is accrued across the stay, or both.
+
+---
+# Health Economics of Pediatric In-Patient Stays
+
+.huge[
+- Data on 44,163 patients
+- Ages 1 - 18
+- From 2003 to 2013
+- In-patient stays
+- Single Pediatric Hospital
+]
+
+---
+background-image: url(los_costs_fig.jpg)
+background-position: 50% 70%
+background-size: 900px
+
+```{r, message = FALSE, echo=FALSE, warning=FALSE, eval=FALSE}
+library(tidyverse)
+tab1 = tibble(
+  General_Mean = c(5.07, 4941, 4700, 9641),
+  General_Var  = c(3.43, 5109, 6373, 11021)/sqrt(31527),
+  ICU_Gen_Mean = c(4.80, 5022, 4642, 9665),
+  ICU_Gen_Var  = c(7.17, 11135, 11401, 22298)/sqrt(8353),
+  ICU_ICU_Mean = c(4.00, 10593, 12056, 22649),
+  ICU_ICU_Var  = c(5.62, 17881, 21185, 38377)/sqrt(8353),
+  ID = c("Length of Stay", "Fixed Costs", "Variable Costs", "Total Costs")
+) %>%
+  furniture::long(c(grep("Mean", names(.))),
+                  c(grep("Var", names(.))),
+                  v.names = c("Mean", "SE"),
+                  times = c("General", "Out of ICU", "In ICU")) %>%
+  mutate(group = c(rep("General", 4), rep("ICU", 8)))
+los = tab1 %>%
+  filter(ID == "Length of Stay")
+costs = tab1 %>%
+  filter(ID != "Length of Stay")
+p1 = los %>%
+  ggplot(aes(x = time, y = Mean)) +
+    geom_bar(stat = "identity", alpha = .6,
+             aes(fill = group, color = group)) +
+    geom_errorbar(aes(ymin = Mean - 1.96 * SE, ymax = Mean + 1.96 * SE,
+                      color = group), width = .4) +
+    facet_grid(~group, space = "free", scales = "free") +
+    scale_fill_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
+    scale_color_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
+    labs(x = " \n\n\n ",
+         y = "Length of Stay",
+         fill = "Where Cost Accrued",
+         title = "Length of Stay",
+         subtitle = "by General Care and ICU") +
+  anteo::theme_anteo_wh()
+p = position_dodge(width = .7)
+p2 = costs %>%
+  filter(ID != "Total Costs") %>%
+  ggplot(aes(x = time, y = Mean, group = ID)) +
+    geom_bar(stat = "identity", 
+             alpha = .6,
+             aes(fill = ID, color = ID), 
+             position = p) +
+    geom_errorbar(aes(ymin = Mean - 1.96 * SE, ymax = Mean + 1.96 * SE,
+                      color = ID), 
+                  width = .4,
+                  position = p) +
+    facet_grid(~group, space = "free", scales = "free") +
+    scale_fill_manual(values = c("dodgerblue4", "chartreuse4")) +
+    scale_color_manual(values = c("dodgerblue4", "chartreuse4"), guide = FALSE) +
+    labs(x = "",
+         y = "Cost per Stay",
+         fill = "",
+         title = "Costs",
+         subtitle = "by Variable and Fixed Costs, stratified by General Care/ICU") +
+  anteo::theme_anteo_wh() +
+  theme(legend.position = "bottom",
+        axis.line = element_line(color = "lightgrey"))
+
+los_costs = gridExtra::grid.arrange(p1, p2, ncol = 2)
+ggsave("los_costs_fig.pdf", los_costs, width = unit(10, 'in'), height = unit(7, 'in'))
+```
+
+
+
+---
+background-image: url(Figure1_DailyCosts.jpg)
+background-position: 50% 70%
+background-size: 900px
+
+???
+We looked at the average costs across the first twenty days of the stays. We assessed this by breaking down the total cost into sub-costs.
+
+1. Variable vs. Fixed
+2. Therapy, Diagnostic, Overhead
+3. Location of Cost
+4. Insurance type
+
+Graphically we can pick out some immediate trends:
+
+1. The first day in hospital is most expensive (much of it driven by therapy costs with some diagnostic costs)
+2. Variable and fixed costs contribute approximately equally to total costs across the first 20 days
+3. The general pattern of high day one costs then a drop in costs holds across the CICU, PICU and General Care
+4. Costs are lower for uninsured compared to private and government insurance
+
+These findings extend previous findings in the ICU; showing costs are not uniformly distributed across days.
+
+Cost reduction techniques, if shaving off one of the last days at the risk of the individual re-visiting, may not be doing as much as previously thought.
+
+Also interesting is the difference between insurance types. If the uninsured that are receiving cheaper care have equal outcomes to others, this is important.
+
+
+Now we are going to switch gears a bit and discuss how I'm helping researchers help individuals
+
 
 ---
 class: inverse, center, middle
@@ -189,13 +357,6 @@ Makes working with data easier, reproducible, and more interpretable
 .pull-right[.large[
 Provides the ability to use new methods
 ]]]]]
-
-???
-Much of this work is inspired by my statistical consulting work.
-
-I have consulted on projects across many disciplines and many types of projects.
-
-As I've seen needs I begin investigating ways to address it.
 
 ---
 # Developing New Methods/Approaches
@@ -771,11 +932,14 @@ library(furniture)
 ```
 ```{r, message=FALSE, warning=FALSE, results='hide'}
 library(MarginalMediation)
-fit = mma(nhanes_2010,
-          marijuana ~ home_meals + gender + age + asthma,
-          home_meals ~ gender + age + asthma,
-          age ~ gender + asthma,
-          family = c(binomial, poisson, gaussian),
+
+pathbc = glm(marijuana ~ home_meals + gender + age + asthma, data = nhanes_2010, family = "binomial")
+patha1 = glm(home_meals ~ gender + age + asthma, data = nhanes_2010, family = "poisson")
+patha2 = glm(age ~ gender + asthma, data = nhanes_2010, family = "poisson")
+
+fit = mma(pathbc,
+          patha1,
+          patha2,
           ind_effects = c("genderFemale-home_meals",
                           "age-home_meals",
                           "asthmaNo-home_meals",
@@ -811,7 +975,4 @@ class: inverse, center, middle
 
 # Thank you.
 
-.footnote[
-All references cited herein can be found in the proposal manuscript.
-]
 

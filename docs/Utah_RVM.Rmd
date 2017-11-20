@@ -1,0 +1,99 @@
+---
+title: "Health Data Science"
+subtitle: "Investigating in and providing tools for public health research"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: pres2.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: inverse, middle, center
+
+# Any fool can know. The point is to understand. 
+### -- Albert Einstein
+
+<br>
+
+# *And to have an impact.*
+### -- Tyson Barrett
+
+---
+
+.right[
+# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+]
+
+-------
+
+---
+count: false
+
+.right[
+# Public Health <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
+
+--------
+
+.Huge[
+The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in public health
+]
+]
+
+???
+I want to explain why I came to love Health Data Science, what I've done so far, and things I'm planning on doing
+
+---
+
+.pull-left[
+## Background
+.huge[.bluer[
+1. Quantitative Psychology
+
+2. Social Epidemiology
+
+3. Economics
+
+4. Machine Learning
+
+5. Statistics
+]]]
+
+.pull-right[
+.huge[
+This background provided the tools to:
+]
+
+.large[.large[
+- .nicegreen[Investigate vulnerable populations'] health
+
+- .dcoral[Provide intuitive, reproducible tools] to researchers be more effective
+]]]
+
+---
+class: inverse, center, middle
+
+# Investigate vulnerable populations' health
+
+???
+This can include:
+
+1. Individuals with chronic conditions (possibly allergies)
+2. Avoiding vulnerable situations (opioids)
+3. Mental health situations
+
+---
+class: inverse, center, middle
+
+# Provide intuitive, reproducible tools to researchers be more effective
+
+???
+I enjoy making life easier for researchers by providing tools and guidelines
+
