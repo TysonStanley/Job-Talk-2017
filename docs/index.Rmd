@@ -945,6 +945,12 @@ Replication of Ford and Hill (2012) that used categorical mediators and outcomes
 3. Highlights important (potentially) causal pathways leading to substance use
 ]]
 
+---
+background-image: url(fig_application_model.jpg)
+background-position: 50% 85%
+background-size: 800px
+
+# Adolescent Religiosity and Substance Use
 
 ---
 background-image: url(fig_relig_sa.jpg)
