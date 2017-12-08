@@ -28,24 +28,12 @@ class: inverse, middle, center
 ### -- Abraham Lincoln --
 
 ---
+background-image: url(fig_hds.jpg)
+background-position: 50% 80%
+background-size: 500px
 
-.right[
-# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
-]
+# Health Data Science
 
--------
-
----
-count: false
-
-.right[
-# Prevention Science <br> + &nbsp;&nbsp;&nbsp;&nbsp; Data Science
-
---------
-
-.Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in Prevention Science
-]]
 
 
 ---
@@ -55,14 +43,14 @@ The .dcoral[development] and .nicegreen[application] of advanced data analytic a
 .huge[
 - .nicegreen[Pragmatic solutions] to research problems
 
-- .dcoral[Broad applicability] across the Prevention Sciences
+- Involves both .dcoral[methods and software]
 ]]
 
 .pull-right[
 .huge[
 - Focus is on .bluer[reproducibility and interpretability]
 
-- Combines methods across multiple fields to .nicegreen[extract actionable information]
+- Uses interdisciplinary approaches to .nicegreen[extract actionable information]
 ]]
 
 ---
@@ -285,23 +273,21 @@ The takeaway --> Marginal Effect depends on all covariates
 Ultimately, mediation doesn't work well with categorical mediators/outcomes. But people are using those, right? So what are the common approaches?
 
 ---
+
 # Current Approaches
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 data.frame(
-  Number = 1:5,
-  Approach = c("Series of logistic regressions",
-               "Use SEM's approach (polychoric correlation)",
+  Number = 1:4,
+  Approach = c("Use SEM's approach (polychoric correlation)",
                "Standardize the coefficients",
                "Interpret each path separately",
                "Pretend all variables are continuous"),
-  Pros = c("Simple to apply in most software", 
-           "Powerful, well-designed,\nEasy to implement with proper software", 
+  Pros = c("Powerful, well-designed,\nEasy to implement with proper software", 
            "Provides significance test\nof indirect effect",
            "Simplest approach with proper models",
            "Simplest approach"),
-  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
-           "Only works with ordinal variables,\n only standardized effect sizes",
+  Cons = c("Only works with ordinal variables,\n only standardized effect sizes",
            "Assumptions (distributions), difficult to interpret beyond p-value",
            "Ignores some information,\n cannot obtain indirect effect size",
            "Purposeful mis-specification, poor model fit")
@@ -313,86 +299,8 @@ data.frame(
                   color = DT::styleEqual(c("1", 
                                            "2", 
                                            "3", 
-                                           "4",
-                                           "5"), 
-                                         c("black", "white", "white", "white", "white")))
-```
-
-???
-  - There are five common approaches, but we don't have time to talk about each in detail
-  - Ultimately, nothing great.
-
-Luckily, there is a simple technique known as Average Marginal Effects.
-
----
-count: false
-
-# Current Approaches
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-data.frame(
-  Number = 1:5,
-  Approach = c("Series of logistic regressions",
-               "Use SEM's approach (polychoric correlation)",
-               "Standardize the coefficients",
-               "Interpret each path separately",
-               "Pretend all variables are continuous"),
-  Pros = c("Simple to apply in most software", 
-           "Powerful, well-designed,\nEasy to implement with proper software", 
-           "Provides significance test\nof indirect effect",
-           "Simplest approach with proper models",
-           "Simplest approach"),
-  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
-           "Only works with ordinal variables,\n only standardized effect sizes",
-           "Assumptions (distributions), difficult to interpret beyond p-value",
-           "Ignores some information,\n cannot obtain indirect effect size",
-           "Purposeful mis-specification, poor model fit")
-) %>%
-  DT::datatable(options = list(dom = "t"),
-                rownames = FALSE) %>%
-  DT::formatStyle(c("Number"),
-                  target = "row",
-                  color = DT::styleEqual(c("1", 
-                                           "2", 
-                                           "3", 
-                                           "4",
-                                           "5"), 
-                                         c("black", "black", "white", "white", "white")))
-```
----
-count: false
-
-# Current Approaches
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-data.frame(
-  Number = 1:5,
-  Approach = c("Series of logistic regressions",
-               "Use SEM's approach (polychoric correlation)",
-               "Standardize the coefficients",
-               "Interpret each path separately",
-               "Pretend all variables are continuous"),
-  Pros = c("Simple to apply in most software", 
-           "Powerful, well-designed,\nEasy to implement with proper software", 
-           "Provides significance test\nof indirect effect",
-           "Simplest approach with proper models",
-           "Simplest approach"),
-  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
-           "Only works with ordinal variables,\n only standardized effect sizes",
-           "Assumptions (distributions), difficult to interpret beyond p-value",
-           "Ignores some information,\n cannot obtain indirect effect size",
-           "Purposeful mis-specification, poor model fit")
-) %>%
-  DT::datatable(options = list(dom = "t"),
-                rownames = FALSE) %>%
-  DT::formatStyle(c("Number"),
-                  target = "row",
-                  color = DT::styleEqual(c("1", 
-                                           "2", 
-                                           "3", 
-                                           "4",
-                                           "5"), 
-                                         c("black", "black", "black", "white", "white")))
+                                           "4"), 
+                                         c("black", "white", "white", "white")))
 ```
 
 ---
@@ -402,19 +310,16 @@ count: false
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 data.frame(
-  Number = 1:5,
-  Approach = c("Series of logistic regressions",
-               "Use SEM's approach (polychoric correlation)",
+  Number = 1:4,
+  Approach = c("Use SEM's approach (polychoric correlation)",
                "Standardize the coefficients",
                "Interpret each path separately",
                "Pretend all variables are continuous"),
-  Pros = c("Simple to apply in most software", 
-           "Powerful, well-designed,\nEasy to implement with proper software", 
+  Pros = c("Powerful, well-designed,\nEasy to implement with proper software", 
            "Provides significance test\nof indirect effect",
            "Simplest approach with proper models",
            "Simplest approach"),
-  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
-           "Only works with ordinal variables,\n only standardized effect sizes",
+  Cons = c("Only works with ordinal variables,\n only standardized effect sizes",
            "Assumptions (distributions), difficult to interpret beyond p-value",
            "Ignores some information,\n cannot obtain indirect effect size",
            "Purposeful mis-specification, poor model fit")
@@ -426,9 +331,8 @@ data.frame(
                   color = DT::styleEqual(c("1", 
                                            "2", 
                                            "3", 
-                                           "4",
-                                           "5"), 
-                                         c("black", "black", "black", "black", "white")))
+                                           "4"), 
+                                         c("black", "black", "white", "white")))
 ```
 
 ---
@@ -438,19 +342,16 @@ count: false
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 data.frame(
-  Number = 1:5,
-  Approach = c("Series of logistic regressions",
-               "Use SEM's approach (polychoric correlation)",
+  Number = 1:4,
+  Approach = c("Use SEM's approach (polychoric correlation)",
                "Standardize the coefficients",
                "Interpret each path separately",
                "Pretend all variables are continuous"),
-  Pros = c("Simple to apply in most software", 
-           "Powerful, well-designed,\nEasy to implement with proper software", 
+  Pros = c("Powerful, well-designed,\nEasy to implement with proper software", 
            "Provides significance test\nof indirect effect",
            "Simplest approach with proper models",
            "Simplest approach"),
-  Cons = c("Cannot obtain indirect effect size, only works with binary (M & Y)",
-           "Only works with ordinal variables,\n only standardized effect sizes",
+  Cons = c("Only works with ordinal variables,\n only standardized effect sizes",
            "Assumptions (distributions), difficult to interpret beyond p-value",
            "Ignores some information,\n cannot obtain indirect effect size",
            "Purposeful mis-specification, poor model fit")
@@ -462,10 +363,42 @@ data.frame(
                   color = DT::styleEqual(c("1", 
                                            "2", 
                                            "3", 
-                                           "4",
-                                           "5"), 
-                                         c("black", "black", "black", "black", "black")))
+                                           "4"), 
+                                         c("black", "black", "black", "white")))
 ```
+
+---
+count: false
+
+# Current Approaches
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+data.frame(
+  Number = 1:4,
+  Approach = c("Use SEM's approach (polychoric correlation)",
+               "Standardize the coefficients",
+               "Interpret each path separately",
+               "Pretend all variables are continuous"),
+  Pros = c("Powerful, well-designed,\nEasy to implement with proper software", 
+           "Provides significance test\nof indirect effect",
+           "Simplest approach with proper models",
+           "Simplest approach"),
+  Cons = c("Only works with ordinal variables,\n only standardized effect sizes",
+           "Assumptions (distributions), difficult to interpret beyond p-value",
+           "Ignores some information,\n cannot obtain indirect effect size",
+           "Purposeful mis-specification, poor model fit")
+) %>%
+  DT::datatable(options = list(dom = "t"),
+                rownames = FALSE) %>%
+  DT::formatStyle(c("Number"),
+                  target = "row",
+                  color = DT::styleEqual(c("1", 
+                                           "2", 
+                                           "3", 
+                                           "4"), 
+                                         c("black", "black", "black", "black")))
+```
+
 
 ---
 # A Better Approach
@@ -482,12 +415,11 @@ $$
 .large[
 1. Each individual has a "marginal effect"
 2. Take the *average* of the marginal effects = AME
-3. Works for any type of GLM (and GLMM)
 ]
 
 --
 
-.large[.nicegreen[Let's us interpret GLM's just like linear regression]]
+.large[.nicegreen[Interpret GLM's just like linear regression]]
 
 ???
 ie, a one unit increase in the predictor is associated with an X unit increase in the outcome
@@ -503,12 +435,10 @@ Benefits:
 
 #### Definition: Continuous Variable
 $$
-AME_k = \beta_k \frac{1}{n} \sum_i^n f(\beta X_i)
+AME_k = \frac{f(\beta_k [x_k + h] + \sum_j^p \beta_j x_j) - f(\beta_k x_k + \sum_j^p \beta_j x_j)}{h}
 $$
 
-$$
-AME_k = \frac{f(\beta_k [x_k + h] + \beta X) - f(\beta_k x_k + \beta X)}{h}
-$$
+<br>
 
 --
 
@@ -516,11 +446,6 @@ $$
 $$
 AME_{k} = \frac{1}{n} \sum_i^n [ F(\beta X | x_k = 1) - F(\beta X | x_i = 0) ]
 $$
-
---
-
-.center[.large[.dcoral[EXAMPLE]]]
-
 
 ???
   - Simply, they are the average of the marginal effects
@@ -536,12 +461,116 @@ $$
 
 --
 .large[.large[
-- .bluer[Essentially applies Average Marginal Effects for each regression that make up the complete mediation model]
-- Uses .dcoral[bootstrapping] to understand uncertainty
-- Created the .nicegreen[software] to perform Marginal Mediation Analysis (discussed later)]]
+- .bluer[Average Marginal Effects for each regression that make up the complete mediation model]]]
 
 --
-.large[.large[To test its .dcoral[accuracy] and .dcoral[power], I performed a Monte Carlo Simulation]]
+
+.large[.large[
+- Uses .dcoral[bootstrapping] to understand uncertainty
+]]
+
+--
+
+.large[.large[
+- Created the .nicegreen[software] to perform Marginal Mediation Analysis (discussed later)]]
+
+---
+# Interpretation of Estimates
+
+.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
+
+.pull-left[.large[
+**The individual paths: the corresponding endogenous variable's original metric.**
+
+**The indirect effect: the outcome's original metric.**
+
+**Both the direct and total effects: the outcome's original metric.**
+]]
+
+--
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.height=4, fig.width=6}
+library("lavaan")
+
+# Example 5.8 from mplus user guide:
+Data <- data.frame(
+  Y_count = rnorm(100),
+  X_continuous = rnorm(100),
+  M_binary = rnorm(100)
+)
+
+# Model:
+model.Lavaan <- '
+  M_binary ~ X_continuous
+  Y_count ~ M_binary + X_continuous
+'
+fit <- cfa(model.Lavaan, data=Data, std.lv=TRUE)
+
+# Plot path diagram:
+library(semPlot)
+semPaths(fit,
+         title=FALSE, curvePivot = TRUE,
+         edgeLabels = c("AME = 0.23", "AME = 1.5", "AME = 0.5"),
+         edge.label.cex = 2,
+         nodeLabels = list(expression("M (binary)"), expression("Y (count)"), expression("X (continuous)")),
+         layout = "spring",
+         sizeMan = 14,
+         shapeMan = "rectangle",
+         border.color = "dodgerblue4",
+         border.width = 3,
+         node.width = 1.75,
+         node.height = 1,
+         mar = c(4,6,5,6))
+```
+]
+
+
+???
+  - One of the main advantages
+  - However, given the number of combination of variable types, it is best to consider some basic interpretation principles
+  - Review principles and show meaning in figure
+    1. So with M being binary, the AME is a Marginal Probability or Risk
+      - A one unit increase in X is associated with a .23 increase in the risk of M.
+    2. In other words, it is the effect of X on Y through M (it should be in the outcomes units)
+      - A one unit increase in X is associated with a `0.23 * 1.5 = 0.345` increase in the count of Y.
+    3. No big surprises here since these are essentially the regression.
+
+---
+# Assumptions of the Approach
+
+.left-column[
+</br></br>
+#### The same assumptions as linear models or generalized linear models hold.
+
+</br></br></br>
+.coral[#### Only additional assumption with AME:]
+]
+
+--
+
+.right-column[
+1. Correct distribution (normal in linear models)
+
+1. Proper variance (homoskedastic in linear models)
+
+1. Linear in parameters
+
+1. Random sample
+
+1. No measurement error
+
+1. No omitted influences
+
+
+### Marginal effect can be described *additively* (after accounting for all the covariates)
+]
+
+???
+  - all same assumptions
+  - Only additional one -- additively
+
+To assess its power, accuracy --> performed Monte Carlo Simulation
 
 ---
 class: inverse, middle, center
@@ -556,7 +585,7 @@ class: inverse, middle, center
 
 --
 
-.large[Note: All] $e_i$.large['s are normally distributed with] $\mu = 0$ .large[and] $SD = 1$
+.large[Note: All] $e_i$.large['s are normally distributed with] $\mu = 0$ .large[and] $\sigma = 1$
 
 ---
 # Monte Carlo Simulation
@@ -566,7 +595,7 @@ class: inverse, middle, center
 $Prob(M^b = 1)$ .large[is a latent continuous variable where]
 
 $$
-Prob(M^b = 1)_i = a_0 + a_1 x_i + e_i
+\frac{Prob(M^b = 1)_i}{1 - Prob(M^b = 1)_i} = a_0 + a_1 x_i + e_i
 $$
 
 .large[The observed variable,] $M_i$.large[, is defined as follows:] 
@@ -690,102 +719,6 @@ background-size: 750px
 
 # CI Coverage
 
-
----
-# Interpretation of Estimates
-
-.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
-
-.pull-left[.large[
-**The individual paths: the corresponding endogenous variable's original metric.**
-
-**The indirect effect: the outcome's original metric.**
-
-**Both the direct and total effects: the outcome's original metric.**
-]]
-
---
-
-.pull-right[
-```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.height=4, fig.width=6}
-library("lavaan")
-
-# Example 5.8 from mplus user guide:
-Data <- data.frame(
-  Y_count = rnorm(100),
-  X_continuous = rnorm(100),
-  M_binary = rnorm(100)
-)
-
-# Model:
-model.Lavaan <- '
-  M_binary ~ X_continuous
-  Y_count ~ M_binary + X_continuous
-'
-fit <- cfa(model.Lavaan, data=Data, std.lv=TRUE)
-
-# Plot path diagram:
-library(semPlot)
-semPaths(fit,
-         title=FALSE, curvePivot = TRUE,
-         edgeLabels = c("AME = 0.23", "AME = 1.5", "AME = 0.5"),
-         edge.label.cex = 2,
-         nodeLabels = list(expression("M (binary)"), expression("Y (count)"), expression("X (continuous)")),
-         layout = "spring",
-         sizeMan = 14,
-         shapeMan = "rectangle",
-         border.color = "dodgerblue4",
-         border.width = 3,
-         node.width = 1.75,
-         node.height = 1,
-         mar = c(4,6,5,6))
-```
-]
-
-
-???
-  - One of the main advantages
-  - However, given the number of combination of variable types, it is best to consider some basic interpretation principles
-  - Review principles and show meaning in figure
-    1. So with M being binary, the AME is a Marginal Probability or Risk
-      - A one unit increase in X is associated with a .23 increase in the risk of M.
-    2. In other words, it is the effect of X on Y through M (it should be in the outcomes units)
-      - A one unit increase in X is associated with a `0.23 * 1.5 = 0.345` increase in the count of Y.
-    3. No big surprises here since these are essentially the regression.
-
----
-# Assumptions of the Approach
-
-.left-column[
-</br></br>
-#### The same assumptions as linear models or generalized linear models hold.
-
-</br></br></br>
-.coral[#### Only additional assumption with AME:]
-]
-
---
-
-.right-column[
-1. Correct distribution (normal in linear models)
-
-1. Proper variance (homoskedastic in linear models)
-
-1. Linear in parameters
-
-1. Random sample
-
-1. No measurement error
-
-1. No omitted influences
-
-
-### Marginal effect can be described *additively* (after accounting for all the covariates)
-]
-
-???
-  - all same assumptions
-  - Only additional one -- additively
 
 
 ---
@@ -928,7 +861,7 @@ count: false
 # Childhood and Adolescent Health
 
 .huge[.dcoral[
-Let's discuss one of my recent projects in this area:]
+One of my recent projects in this area:]
 
 - Adolescent Religiosity and Substance Use
 ]
@@ -945,12 +878,39 @@ Replication of Ford and Hill (2012) that used categorical mediators and outcomes
 3. Highlights important (potentially) causal pathways leading to substance use
 ]]
 
+???
+Ford and Hill in *Substance Use and Misuse*
+
 ---
 background-image: url(fig_application_model.jpg)
 background-position: 50% 85%
 background-size: 800px
 
 # Adolescent Religiosity and Substance Use
+
+---
+# Results
+### Proportion of Effect that is Mediated
+
+```{r, echo=FALSE}
+load(file = "~/Dropbox/1 Dissertation/Manuscript_MM/Data/NSDUH_2014_Results.rda")
+
+tob_perc = fit_tob$ind_effects[,3]/(fit_tob$dir_effects[,1] + sum(fit_tob$ind_effects[,3]))
+rx_perc  = fit_rx$ind_effects[,3]/(fit_rx$dir_effects[,1] + sum(fit_rx$ind_effects[,3]))
+mar_perc = fit_mar$ind_effects[,3]/(fit_mar$dir_effects[,1] + sum(fit_mar$ind_effects[,3]))
+ill_perc = fit_ill$ind_effects[,3]/(fit_ill$dir_effects[,1] + sum(fit_ill$ind_effects[,3]))
+
+cbind(tob_perc, rx_perc, mar_perc, ill_perc) %>%
+  data.frame %>%
+  set_names(c("Tobacco", "Prescription", "Marijuana", "Illicit")) %>%
+  map_df(~.x*100) %>%
+  mutate(Mediator = c("Respondent Views", "Peer Views", "Depression")) %>%
+  select(Mediator, Tobacco, Prescription, Marijuana, Illicit) %>%
+  map_if(is.numeric, round, 1) %>%
+  data.frame %>%
+  DT::datatable(options = list(dom = "t"))
+```
+
 
 ---
 background-image: url(fig_relig_sa.jpg)
@@ -1059,31 +1019,6 @@ ggsave(file = "docs/fig_relig_sa.jpg", height = 7, width = 9, units = "in")
 
 
 ---
-# Adolescent Religiosity and Substance Use
-### Proportion of Effect that is Mediated
-
-```{r, echo=FALSE}
-load(file = "~/Dropbox/1 Dissertation/Manuscript_MM/Data/NSDUH_2014_Results.rda")
-
-tob_perc = fit_tob$ind_effects[,3]/(fit_tob$dir_effects[,1] + sum(fit_tob$ind_effects[,3]))
-rx_perc  = fit_rx$ind_effects[,3]/(fit_rx$dir_effects[,1] + sum(fit_rx$ind_effects[,3]))
-mar_perc = fit_mar$ind_effects[,3]/(fit_mar$dir_effects[,1] + sum(fit_mar$ind_effects[,3]))
-ill_perc = fit_ill$ind_effects[,3]/(fit_ill$dir_effects[,1] + sum(fit_ill$ind_effects[,3]))
-
-cbind(tob_perc, rx_perc, mar_perc, ill_perc) %>%
-  data.frame %>%
-  set_names(c("Tobacco", "Prescription", "Marijuana", "Illicit")) %>%
-  map_df(~.x*100) %>%
-  mutate(Mediator = c("Respondent Views", "Peer Views", "Depression")) %>%
-  select(Mediator, Tobacco, Prescription, Marijuana, Illicit) %>%
-  map_if(is.numeric, round, 1) %>%
-  data.frame %>%
-  DT::datatable(options = list(dom = "t"))
-```
-
-
-
----
 class: inverse, middle, center
 
 # Future Directions
@@ -1105,9 +1040,9 @@ class: inverse, middle, center
 .pull-right[.large[.large[
 ### Increase:
 
-- My methodological work regarding Mixture Modeling (with Dr. Bethany Bray)
+- My methodological work regarding Mixture Modeling
 
-- My research line regarding childhood substance use (with Dr. Jenn Maggs)
+- My research line regarding childhood substance use
 
 ]]]
 

@@ -18,9 +18,6 @@ class: center, middle, inverse, title-slide
 
 ---
 
-
-
-
 class: inverse, middle, center
 
 # Any fool can know. The point is to understand.
@@ -33,24 +30,12 @@ class: inverse, middle, center
 ### -- Abraham Lincoln --
 
 ---
+background-image: url(fig_hds.jpg)
+background-position: 50% 80%
+background-size: 500px
 
-.right[
-# Prevention Science &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
-]
+# Health Data Science
 
--------
-
----
-count: false
-
-.right[
-# Prevention Science &lt;br&gt; + &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Data Science
-
---------
-
-.Huge[
-The .dcoral[development] and .nicegreen[application] of advanced data analytic and statistical methods—including their software—in Prevention Science
-]]
 
 
 ---
@@ -60,14 +45,14 @@ The .dcoral[development] and .nicegreen[application] of advanced data analytic a
 .huge[
 - .nicegreen[Pragmatic solutions] to research problems
 
-- .dcoral[Broad applicability] across the Prevention Sciences
+- Involves both .dcoral[methods and software]
 ]]
 
 .pull-right[
 .huge[
 - Focus is on .bluer[reproducibility and interpretability]
 
-- Combines methods across multiple fields to .nicegreen[extract actionable information]
+- Uses interdisciplinary approaches to .nicegreen[extract actionable information]
 ]]
 
 ---
@@ -258,47 +243,36 @@ The takeaway --&gt; Marginal Effect depends on all covariates
 Ultimately, mediation doesn't work well with categorical mediators/outcomes. But people are using those, right? So what are the common approaches?
 
 ---
+
 # Current Approaches
 
-<div id="htmlwidget-2c7ea02e903a370a7b56" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2c7ea02e903a370a7b56">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'white' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
-
-???
-  - There are five common approaches, but we don't have time to talk about each in detail
-  - Ultimately, nothing great.
-
-Luckily, there is a simple technique known as Average Marginal Effects.
+<div id="htmlwidget-8e3cfb6575a91799f385" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8e3cfb6575a91799f385">{"x":{"filter":"none","data":[[1,2,3,4],["Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'white' : value == '3' ? 'white' : value == '4' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-c7d3dd402769fe8f7ca6" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c7d3dd402769fe8f7ca6">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
----
-count: false
-
-# Current Approaches
-
-<div id="htmlwidget-922e1e210931526991bc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-922e1e210931526991bc">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'white' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-e2eb4868e25b751c0c0e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2eb4868e25b751c0c0e">{"x":{"filter":"none","data":[[1,2,3,4],["Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'white' : value == '4' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-578b4eccc281dd1b9825" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-578b4eccc281dd1b9825">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-01d62357795d7e851af0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-01d62357795d7e851af0">{"x":{"filter":"none","data":[[1,2,3,4],["Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'white' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ---
 count: false
 
 # Current Approaches
 
-<div id="htmlwidget-21dca9ecfe4513ad71cd" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-21dca9ecfe4513ad71cd">{"x":{"filter":"none","data":[[1,2,3,4,5],["Series of logistic regressions","Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Simple to apply in most software","Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Cannot obtain indirect effect size, only works with binary (M &amp; Y)","Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : value == '5' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-efd8b294085ddb2b8228" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-efd8b294085ddb2b8228">{"x":{"filter":"none","data":[[1,2,3,4],["Use SEM's approach (polychoric correlation)","Standardize the coefficients","Interpret each path separately","Pretend all variables are continuous"],["Powerful, well-designed,\nEasy to implement with proper software","Provides significance test\nof indirect effect","Simplest approach with proper models","Simplest approach"],["Only works with ordinal variables,\n only standardized effect sizes","Assumptions (distributions), difficult to interpret beyond p-value","Ignores some information,\n cannot obtain indirect effect size","Purposeful mis-specification, poor model fit"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Number<\/th>\n      <th>Approach<\/th>\n      <th>Pros<\/th>\n      <th>Cons<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[0]; if (value!==null) $(row).css({'color':value == '1' ? 'black' : value == '2' ? 'black' : value == '3' ? 'black' : value == '4' ? 'black' : ''});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+
 
 ---
 # A Better Approach
@@ -315,12 +289,11 @@ $$
 .large[
 1. Each individual has a "marginal effect"
 2. Take the *average* of the marginal effects = AME
-3. Works for any type of GLM (and GLMM)
 ]
 
 --
 
-.large[.nicegreen[Let's us interpret GLM's just like linear regression]]
+.large[.nicegreen[Interpret GLM's just like linear regression]]
 
 ???
 ie, a one unit increase in the predictor is associated with an X unit increase in the outcome
@@ -336,12 +309,10 @@ Benefits:
 
 #### Definition: Continuous Variable
 $$
-AME_k = \beta_k \frac{1}{n} \sum_i^n f(\beta X_i)
+AME_k = \frac{f(\beta_k [x_k + h] + \sum_j^p \beta_j x_j) - f(\beta_k x_k + \sum_j^p \beta_j x_j)}{h}
 $$
 
-$$
-AME_k = \frac{f(\beta_k [x_k + h] + \beta X) - f(\beta_k x_k + \beta X)}{h}
-$$
+&lt;br&gt;
 
 --
 
@@ -349,11 +320,6 @@ $$
 $$
 AME_{k} = \frac{1}{n} \sum_i^n [ F(\beta X | x_k = 1) - F(\beta X | x_i = 0) ]
 $$
-
---
-
-.center[.large[.dcoral[EXAMPLE]]]
-
 
 ???
   - Simply, they are the average of the marginal effects
@@ -369,12 +335,84 @@ $$
 
 --
 .large[.large[
-- .bluer[Essentially applies Average Marginal Effects for each regression that make up the complete mediation model]
-- Uses .dcoral[bootstrapping] to understand uncertainty
-- Created the .nicegreen[software] to perform Marginal Mediation Analysis (discussed later)]]
+- .bluer[Average Marginal Effects for each regression that make up the complete mediation model]]]
 
 --
-.large[.large[To test its .dcoral[accuracy] and .dcoral[power], I performed a Monte Carlo Simulation]]
+
+.large[.large[
+- Uses .dcoral[bootstrapping] to understand uncertainty
+]]
+
+--
+
+.large[.large[
+- Created the .nicegreen[software] to perform Marginal Mediation Analysis (discussed later)]]
+
+---
+# Interpretation of Estimates
+
+.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
+
+.pull-left[.large[
+**The individual paths: the corresponding endogenous variable's original metric.**
+
+**The indirect effect: the outcome's original metric.**
+
+**Both the direct and total effects: the outcome's original metric.**
+]]
+
+--
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+
+???
+  - One of the main advantages
+  - However, given the number of combination of variable types, it is best to consider some basic interpretation principles
+  - Review principles and show meaning in figure
+    1. So with M being binary, the AME is a Marginal Probability or Risk
+      - A one unit increase in X is associated with a .23 increase in the risk of M.
+    2. In other words, it is the effect of X on Y through M (it should be in the outcomes units)
+      - A one unit increase in X is associated with a `0.23 * 1.5 = 0.345` increase in the count of Y.
+    3. No big surprises here since these are essentially the regression.
+
+---
+# Assumptions of the Approach
+
+.left-column[
+&lt;/br&gt;&lt;/br&gt;
+#### The same assumptions as linear models or generalized linear models hold.
+
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+.coral[#### Only additional assumption with AME:]
+]
+
+--
+
+.right-column[
+1. Correct distribution (normal in linear models)
+
+1. Proper variance (homoskedastic in linear models)
+
+1. Linear in parameters
+
+1. Random sample
+
+1. No measurement error
+
+1. No omitted influences
+
+
+### Marginal effect can be described *additively* (after accounting for all the covariates)
+]
+
+???
+  - all same assumptions
+  - Only additional one -- additively
+
+To assess its power, accuracy --&gt; performed Monte Carlo Simulation
 
 ---
 class: inverse, middle, center
@@ -389,7 +427,7 @@ class: inverse, middle, center
 
 --
 
-.large[Note: All] `\(e_i\)`.large['s are normally distributed with] `\(\mu = 0\)` .large[and] `\(SD = 1\)`
+.large[Note: All] `\(e_i\)`.large['s are normally distributed with] `\(\mu = 0\)` .large[and] `\(\sigma = 1\)`
 
 ---
 # Monte Carlo Simulation
@@ -399,7 +437,7 @@ class: inverse, middle, center
 `\(Prob(M^b = 1)\)` .large[is a latent continuous variable where]
 
 $$
-Prob(M^b = 1)_i = a_0 + a_1 x_i + e_i
+\frac{Prob(M^b = 1)_i}{1 - Prob(M^b = 1)_i} = a_0 + a_1 x_i + e_i
 $$
 
 .large[The observed variable,] `\(M_i\)`.large[, is defined as follows:] 
@@ -524,70 +562,6 @@ background-size: 750px
 # CI Coverage
 
 
----
-# Interpretation of Estimates
-
-.footnote[Given the units of the estimates, meta-analytic comparisons across studies can be simplified as well.]
-
-.pull-left[.large[
-**The individual paths: the corresponding endogenous variable's original metric.**
-
-**The indirect effect: the outcome's original metric.**
-
-**Both the direct and total effects: the outcome's original metric.**
-]]
-
---
-
-.pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
-]
-
-
-???
-  - One of the main advantages
-  - However, given the number of combination of variable types, it is best to consider some basic interpretation principles
-  - Review principles and show meaning in figure
-    1. So with M being binary, the AME is a Marginal Probability or Risk
-      - A one unit increase in X is associated with a .23 increase in the risk of M.
-    2. In other words, it is the effect of X on Y through M (it should be in the outcomes units)
-      - A one unit increase in X is associated with a `0.23 * 1.5 = 0.345` increase in the count of Y.
-    3. No big surprises here since these are essentially the regression.
-
----
-# Assumptions of the Approach
-
-.left-column[
-&lt;/br&gt;&lt;/br&gt;
-#### The same assumptions as linear models or generalized linear models hold.
-
-&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
-.coral[#### Only additional assumption with AME:]
-]
-
---
-
-.right-column[
-1. Correct distribution (normal in linear models)
-
-1. Proper variance (homoskedastic in linear models)
-
-1. Linear in parameters
-
-1. Random sample
-
-1. No measurement error
-
-1. No omitted influences
-
-
-### Marginal effect can be described *additively* (after accounting for all the covariates)
-]
-
-???
-  - all same assumptions
-  - Only additional one -- additively
-
 
 ---
 # Creating Software
@@ -659,17 +633,17 @@ fit = mma(pathbc,
                
                ── Indirect Effects ──
                                          A-path   B-path Indirect    Lower   Upper
-               genderFemale-home_meals -1.34842 -0.00973  0.01312  0.00413 0.02455
-               age-home_meals          -0.05713 -0.00973  0.00056 -0.00004 0.00135
-               asthmaNo-home_meals     -0.00410 -0.00973  0.00004 -0.00616 0.00617
-               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00272 0.00206
-               asthmaNo-age             0.35030  0.00066  0.00023 -0.00309 0.00407
+               genderFemale-home_meals -1.34842 -0.00973  0.01312  0.00374 0.02428
+               age-home_meals          -0.05713 -0.00973  0.00056 -0.00009 0.00142
+               asthmaNo-home_meals     -0.00410 -0.00973  0.00004 -0.00715 0.00605
+               genderFemale-age        -0.21555  0.00066 -0.00014 -0.00284 0.00197
+               asthmaNo-age             0.35030  0.00066  0.00023 -0.00300 0.00428
                
                ── Direct Effects ──
                               Direct    Lower   Upper
-               genderFemale  0.10430  0.04850 0.16056
-               age           0.00066 -0.00657 0.00801
-               asthmaNo     -0.00172 -0.07781 0.06692
+               genderFemale  0.10430  0.04259 0.15461
+               age           0.00066 -0.00628 0.00748
+               asthmaNo     -0.00172 -0.07786 0.07155
                -----
 ```
 
@@ -736,7 +710,7 @@ count: false
 # Childhood and Adolescent Health
 
 .huge[.dcoral[
-Let's discuss one of my recent projects in this area:]
+One of my recent projects in this area:]
 
 - Adolescent Religiosity and Substance Use
 ]
@@ -753,6 +727,9 @@ Replication of Ford and Hill (2012) that used categorical mediators and outcomes
 3. Highlights important (potentially) causal pathways leading to substance use
 ]]
 
+???
+Ford and Hill in *Substance Use and Misuse*
+
 ---
 background-image: url(fig_application_model.jpg)
 background-position: 50% 85%
@@ -761,20 +738,19 @@ background-size: 800px
 # Adolescent Religiosity and Substance Use
 
 ---
+# Results
+### Proportion of Effect that is Mediated
+
+<div id="htmlwidget-aeeeca4ebb35a27e26e3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aeeeca4ebb35a27e26e3">{"x":{"filter":"none","data":[["1","2","3"],["Respondent Views","Peer Views","Depression"],[32.3,27.5,2.1],[21.6,32.4,7.3],[29.5,24.2,1.6],[20.4,24.3,3.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Mediator<\/th>\n      <th>Tobacco<\/th>\n      <th>Prescription<\/th>\n      <th>Marijuana<\/th>\n      <th>Illicit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+
+---
 background-image: url(fig_relig_sa.jpg)
 background-position: 50% 85%
 background-size: 800px
 
 
-
-
-
----
-# Adolescent Religiosity and Substance Use
-### Proportion of Effect that is Mediated
-
-<div id="htmlwidget-66df362a4374dfa44172" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-66df362a4374dfa44172">{"x":{"filter":"none","data":[["1","2","3"],["Respondent Views","Peer Views","Depression"],[32.3,27.5,2.1],[21.6,32.4,7.3],[29.5,24.2,1.6],[20.4,24.3,3.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Mediator<\/th>\n      <th>Tobacco<\/th>\n      <th>Prescription<\/th>\n      <th>Marijuana<\/th>\n      <th>Illicit<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 
 
 
@@ -800,9 +776,9 @@ class: inverse, middle, center
 .pull-right[.large[.large[
 ### Increase:
 
-- My methodological work regarding Mixture Modeling (with Dr. Bethany Bray)
+- My methodological work regarding Mixture Modeling
 
-- My research line regarding childhood substance use (with Dr. Jenn Maggs)
+- My research line regarding childhood substance use
 
 ]]]
 
